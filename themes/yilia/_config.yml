@@ -1,0 +1,57 @@
+# Header
+menu:
+  博客主页: /
+  所有文章: /archives
+
+# SubNav
+subnav:
+  mail: mailto:mail@qious.cn
+  github: https://github.com/qious
+  rss: /atom.xml
+  #weibo: "#"
+  #zhihu: "#"
+  #douban: "#"
+  #facebook: "#"
+  #google: "#"
+  #twitter: "#"
+  #linkedin: "#"
+
+rss: /atom.xml
+
+# Content
+excerpt_link: more
+fancybox: true
+mathjax: false
+
+# 是否开启动画效果
+animate: true
+
+# 是否在新窗口打开链接
+open_in_new: false
+
+# Miscellaneous
+baidu_analytics: 5481e38923a01e4183ccc1852785c47f
+# favicon: /logo.png
+
+#你的头像url
+avatar: /logo.png
+#是否开启多说评论，填写你在多说申请的项目名称 duoshuo: duoshuo-key
+#若使用disqus，请在博客config文件中填写disqus_shortname，并关闭多说评论
+duoshuo: qiujun
+#是否开启云标签
+tagcloud: true
+
+#是否开启友情链接
+#不开启——
+#friends: false
+#开启——
+friends:
+  陈康'Blog: http://blog.kchen.cn/
+  wangkechun的博客: http://blog.hi-hi.cn/
+  JailBreak的博客: http://vgee.cn/
+
+#是否开启“关于我”。
+#不开启——
+aboutme: false
+#开启——
+# aboutme: 我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…
