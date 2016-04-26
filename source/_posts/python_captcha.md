@@ -16,9 +16,7 @@ tags: [Python]
 
 #### **大致思路**
 * 先打开原始图片
-![验证码1](/uploads/20150123/code-1.jpg)
-![验证码2](/uploads/20150123/code-2.jpg)
-![验证码3](/uploads/20150123/code-3.jpg)
+![验证码1](/uploads/20150123/code-1.jpg) ![验证码2](/uploads/20150123/code-2.jpg) ![验证码3](/uploads/20150123/code-3.jpg)
 
 ```python
 import Image
@@ -32,9 +30,7 @@ im = im.convert('L')
 ```
 
 灰度处理后的效果
-![验证码灰度后1](/uploads/20150123/code-L-1.jpg)
-![验证码灰度后2](/uploads/20150123/code-L-2.jpg)
-![验证码灰度后3](/uploads/20150123/code-L-3.jpg)
+![验证码灰度后1](/uploads/20150123/code-L-1.jpg) ![验证码灰度后2](/uploads/20150123/code-L-2.jpg) ![验证码灰度后3](/uploads/20150123/code-L-3.jpg)
 
 * 根据阀值(threshold)生成表table再根据table对图片二值化处理
 
@@ -45,9 +41,7 @@ im = im.point(table, '1')
 ```
 
 二值化处理后的效果
-![验证码二值化后1](/uploads/20150123/code-b-1.jpg)
-![验证码二值化后2](/uploads/20150123/code-b-2.jpg)
-![验证码二值化后3](/uploads/20150123/code-b-3.jpg)
+![验证码二值化后1](/uploads/20150123/code-b-1.jpg) ![验证码二值化后2](/uploads/20150123/code-b-2.jpg) ![验证码二值化后3](/uploads/20150123/code-b-3.jpg)
 
 * 将二值化后的图片转为字符串
 
@@ -106,10 +100,7 @@ for i in range(imgNum):
 ```
 
 分割后部分图片效果
-![验证码分割后后0](/uploads/20150123/code-1-0.jpg)
-![验证码分割后后1](/uploads/20150123/code-1-1.jpg)
-![验证码分割后后2](/uploads/20150123/code-1-2.jpg)
-![验证码分割后后3](/uploads/20150123/code-1-3.jpg)
+![验证码分割后后0](/uploads/20150123/code-1-0.jpg) ![验证码分割后后1](/uploads/20150123/code-1-1.jpg) ![验证码分割后后2](/uploads/20150123/code-1-2.jpg) ![验证码分割后后3](/uploads/20150123/code-1-3.jpg)
 
 图片手动选择
 * 这一步我处理的很蛋痛

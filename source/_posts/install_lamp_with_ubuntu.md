@@ -28,19 +28,19 @@ $ sudo service apache2 restart
 * 安装PHP
 
 ```bash
-	  $ sudo apt-get install libapache2-mod-php5 php5 php5-gd php5-mysql
+$ sudo apt-get install libapache2-mod-php5 php5 php5-gd php5-mysql
 ```
 
 * 安装完成后，重启Apache2
 
 ```bash
-	  $ sudo service apache2 restart
+$ sudo service apache2 restart
 ```
 
 * 新建测试文件，测试php是否安装成功
 
 ```bash
-	  $ sudo vim /var/www/test.php
+$ sudo vim /var/www/test.php
 ```
 
 * 填写以下内容

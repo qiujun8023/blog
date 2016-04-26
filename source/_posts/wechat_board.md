@@ -63,5 +63,4 @@ Emoji的处理是非常蛋疼的
 
 我们共同开发的两个人都是后端的，然而一些简单的前端页面又是必须的，用的都是原生CSS，界面虽一般，但能用就行
 
-![chat](/uploads/20150506/chat1.png)
-![chat](/uploads/20150506/chat2.png)
+![发送图片](/uploads/20150506/chat1.png) ![聊天](/uploads/20150506/chat2.png)

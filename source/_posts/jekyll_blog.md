@@ -185,14 +185,16 @@ title: 我的Blog
 
 * 这时的目录结构应该是这样的
 
-> .
-> ├── _config.yml
-> ├── index.md
-> ├── _layouts
-> │   └── default.html
-> ├── _posts
-> │   └── 2015-01-01-hello_world.md
-> └── README.md
+```bash
+.
+├── _config.yml
+├── index.md
+├── _layouts
+│   └── default.html
+├── _posts
+│   └── 2015-01-01-hello_world.md
+└── README.md
+```
 
 * 本地环境运行
 
