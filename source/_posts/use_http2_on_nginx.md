@@ -1,7 +1,7 @@
 ---
 title: 在Nginx上配置HTTP/2+TLS
 date: 2016-04-17
-tags: [Ubuntu, Nginx, HTTP, 安全]
+tags: [Ubuntu, Nginx, HTTP]
 ---
 
 #### **什么是HTTP/2协议**

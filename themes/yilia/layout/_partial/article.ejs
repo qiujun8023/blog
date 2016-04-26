@@ -1,4 +1,4 @@
-<article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %>" itemscope itemprop="blogPost">
+<article id="<%= post.layout %>-<%= post.slug %>" class="article <% if (index){ %> article-list <% } else { %> article-details <% } %> article-type-<%= post.layout %>" itemscope itemprop="blogPost">
   <%if(post.noDate != "true"){%>
     <div class="article-meta">
       <%- partial('post/date', {class_name: 'article-date', date_format: null}) %>
@@ -43,12 +43,11 @@
   <% if (!index){ %>
     <%- partial('post/nav') %>
   <% } %>
+  <% if (!index && theme.duoshuo && post.comments){ %>
+    <%- partial('post/duoshuo', {
+      key: post.slug,
+      title: post.title,
+      url: config.url+url_for(post.path)
+    }) %>
+  <% } %>
 </article>
-
-<% if (!index && theme.duoshuo && post.comments){ %>
-  <%- partial('post/duoshuo', {
-    key: post.slug,
-    title: post.title,
-    url: config.url+url_for(post.path)
-  }) %>
-<% } %>

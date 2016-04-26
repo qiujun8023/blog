@@ -28,6 +28,9 @@ define([], function() {
 
     //第三步 -- 根据数据渲染DOM
     var renderDOM = function() {
+        if (document.getElementById("viewer")) {
+            return true;
+        }
         //生成节点
         var $viewer = document.createElement("div");
         $viewer.id = "viewer";
@@ -60,7 +63,6 @@ define([], function() {
             basicwrap.className = "anm-swipe";
         }, 0);
         document.ontouchstart = function(e) {
-            console.log(_isShow);
             if (!_isShow || e.target.tagName != "A") {
                 return false;
             }
@@ -114,19 +116,21 @@ define([], function() {
         //滚动样式
         var $overlay = $("#mobile-nav .overlay");
         var $header = $(".js-mobile-header");
-        window.onscroll = function() {
+        var onscroll = function() {
             var scrollTop = document.documentElement.scrollTop + document.body.scrollTop;
             if (scrollTop >= 69) {
                 $overlay.addClass("fixed");
             } else {
                 $overlay.removeClass("fixed");
             }
-            if (scrollTop >= 110) {
-                $header.removeClass("hide").addClass("fixed");
+            if (scrollTop >= 105) {
+                $header.addClass("visible");
             } else {
-                $header.addClass("hide").removeClass("fixed");
+                $header.removeClass("visible");
             }
         };
+        onscroll();
+        window.onscroll = onscroll;
         $header[0].addEventListener("touchstart", function() {
             $('html, body').animate({ scrollTop: 0 }, 'slow');
         }, false);

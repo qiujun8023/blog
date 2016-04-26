@@ -3,7 +3,7 @@ hexo-blog
 
 #### 简介
 
-本博客使用的 [Hexo](https://hexo.io) 框架，
+本博客使用的 [Hexo](https://hexo.io) 框架
 
 在[Yilia](https://github.com/litten/hexo-theme-yilia)主题的基础上进行了一些修改：
 * 尽可能使用CDN

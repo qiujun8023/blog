@@ -17,12 +17,21 @@
         position: fixed;
         font-size: 18px;
         top: -20px;
-        padding-top: 7px;
         height: 39px;
         line-height: 39px;
+        padding-top: 7px;
         width: 100%;
         background-color: #333;
         color: #ddd;
+    }
+}
+.js-mobile-header {
+    transition:all 0.25s ease-in;
+    visibility: hidden;
+    opacity: 0;
+    &.visible {
+        opacity: 1;
+        visibility: visible;
     }
 }
 .overlay{
@@ -54,9 +63,6 @@
         margin-bottom: 10px;
     }
 }
-.header-subtitle{
-    padding: 0 24px;
-}
 
 .article-info-index.article-info{
   padding-top: 10px;
@@ -67,11 +73,6 @@
     margin: 0;
     padding-top: 10px;
     border: none;
-}
-.article-more-link{
-    a{
-        float:right;
-    }
 }
 #viewer-box .viewer-box-l{
     font-size: 14px;
