@@ -12,10 +12,6 @@ hexo-blog
 * 删除冗余代码，修复一些Bug
 * 根据[Spfk](https://github.com/luuman/hexo-theme-spfk)进行一些界面的修改
 
-#### 部署
-
-部署并未使用Hexo里面介绍的几种方式，而是使用GitHub提供的Hook进行自动部署
-
 #### 移植
 
 本博客通过[Jekyll版本](https://github.com/qious/jekyll-blog)移植而来
