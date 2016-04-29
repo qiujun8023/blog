@@ -10,6 +10,7 @@ hexo-blog
 * 同时适应HTTP和HTTPS
 * 使用iconfont而不是多张小图片
 * 删除冗余代码，修复一些Bug
+* 优化加载动画
 * 根据[Spfk](https://github.com/luuman/hexo-theme-spfk)进行一些界面的修改
 
 #### 移植

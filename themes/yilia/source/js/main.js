@@ -3,8 +3,7 @@ require.config({
     paths: {
         'pc': ['/js/pc'],
         'mobile': ['/js/mobile'],
-        'fancybox': ['//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack'],
-        'lazyload': ['//cdn.bootcss.com/jquery.lazyload/1.9.1/jquery.lazyload.min']
+        'fancybox': ['//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack']
     }
 })
 
@@ -86,32 +85,27 @@ require([], function() {
 
     //是否开启动画
     if (yiliaConfig.animate === true) {
-        require(['lazyload'], function() {
-            //avatar
-            $(".js-avatar").attr("src", $(".js-avatar").attr("lazy-src"));
-            $(".js-avatar")[0].onload = function() {
-                $(".js-avatar").addClass("show");
-            }
-        });
-        if (yiliaConfig.isHome === true) {
-            //content
-            function showArticle() {
-                $(".article").each(function() {
-                    if ($(this).offset().top <= $(window).scrollTop() + $(window).height() && !($(this).hasClass('show'))) {
-                        $(this).removeClass("hidden").addClass("show");
-                        $(this).addClass("is-hiddened");
-                    } else {
-                        if (!$(this).hasClass("is-hiddened")) {
-                            $(this).addClass("hidden");
-                        }
+        function showArticle() {
+            $(".article").each(function() {
+                if ($(this).offset().top <= $(window).scrollTop() + $(window).height() && !($(this).hasClass('show'))) {
+                    $(this).removeClass("hidden").addClass("show");
+                    $(this).addClass("is-hiddened");
+                } else {
+                    if (!$(this).hasClass("is-hiddened")) {
+                        $(this).addClass("hidden");
                     }
-                });
-            }
-            $(window).on('scroll', function() {
-                showArticle();
+                }
             });
-            showArticle();
         }
+        $(window).on('scroll', function() {
+            showArticle();
+        });
+        $(window).on('resize', function() {
+            showArticle();
+        });
+        showArticle();
+    } else {
+        $(".article").css({visibility:'visible'});
     }
 
     //是否新窗口打开链接

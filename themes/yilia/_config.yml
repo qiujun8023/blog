@@ -32,11 +32,12 @@ animate: true
 open_in_new: false
 
 # Miscellaneous
-baidu_analytics: 5481e38923a01e4183ccc1852785c47f
+analytics:
+  baidu: 5481e38923a01e4183ccc1852785c47f
 # favicon: /logo.png
 
 #你的头像url
-avatar: /logo.png
+avatar: //q.qlogo.cn/headimg_dl?fid=blog&spec=100&dst_uin=351310146
 #是否开启多说评论，填写你在多说申请的项目名称 duoshuo: duoshuo-key
 duoshuo: qiujun
 #是否开启云标签
@@ -47,7 +48,7 @@ tagcloud: true
 #friends: false
 #开启——
 friends:
-  陈康'Blog: http://blog.kchen.cn/
+  陈康'Blog: http://www.kchen.cn/
   wangkechun的博客: http://blog.hi-hi.cn/
   JailBreak的博客: http://vgee.cn/
   Trumi的博客: http://trumi.cn/
