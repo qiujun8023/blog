@@ -47,7 +47,7 @@
     @keyframes fadeInRight {
       0% {
         opacity: 0;
-        transform: translateY(10%);
+        transform: translateY(5%);
       }
       100% {
         opacity: 1;
@@ -123,12 +123,11 @@
   }
   p code,li code{
     padding: 1px 3px;
-    margin: 0 3px;
-    background: #ddd;
-    border: 1px solid #ccc;
-    font-family: Menlo,Monaco,"Andale Mono","lucida console","Courier New",monospace;
+    margin: 0.2em 3px;
+    font-size: 85%;
+    font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
     word-wrap: break-word;
-    font-size: 14px;
+    background-color: rgba(0,0,0,0.06);
     border-radius: 3px;
   }
   blockquote {
@@ -148,15 +147,13 @@
   ul{
     li:before{
       content: "";
-      width: 6px;
-      height: 6px;
-      border: 1px solid #999;
+      width: 5px;
+      height: 5px;
       border-radius: 10px;
-      background: #aaa;
+      background: #777;
+      margin: 12px 8px 0 0;
       display: inline-block;
-      margin-right: 10px;
-      float: left;
-      margin-top: 10px;
+      float: left
     }
   }
   ul,ol{

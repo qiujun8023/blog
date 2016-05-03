@@ -1,13 +1,13 @@
 <nav id="mobile-nav">
   <div class="overlay">
-    <div class="iconfont icon-deji slider-trigger"></div>
+    <div class="iconfont icon-menu slider-trigger"></div>
     <div class="header-author js-mobile-header fixed"><%=theme.author%></div>
   </div>
   <div class="intrude-less">
     <header id="header" class="inner">
-      <div class="profilepic">
+      <a href="/" class="profilepic">
         <img src="<%=theme.avatar%>" <% if (theme.animate){ %>class="animate"<% } %>>
-      </div>
+      </a>
       <hgroup>
         <div class="header-author"><%=theme.author%></div>
       </hgroup>

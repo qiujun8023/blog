@@ -28,8 +28,8 @@ define([], function() {
         $wrap.css({
             "transform": "translate(-" + idx * 100 + "%, 0 )"
         });
-        $(".icon-wrap").addClass("hide");
-        $(".icon-wrap").eq(idx).removeClass("hide");
+        $(".icon-ctn .iconfont").addClass("hide");
+        $(".icon-ctn .iconfont").eq(idx).removeClass("hide");
     }
 
     var bind = function() {
@@ -53,7 +53,7 @@ define([], function() {
         var isEnterBtn = false;
         var isEnterTips = false;
 
-        $(".icon").bind("mouseenter", function() {
+        $(".icon-ctn").bind("mouseenter", function() {
             isEnterBtn = true;
             Tips.show();
         }).bind("mouseleave", function() {

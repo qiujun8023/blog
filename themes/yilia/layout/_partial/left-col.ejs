@@ -17,28 +17,15 @@
 
     <%if(theme.tagcloud){%>
       <div class="switch-btn">
-        <div class="icon">
-          <div class="icon-ctn">
-            <div class="icon-wrap icon-house" data-idx="0">
-              <div class="birdhouse"></div>
-              <div class="birdhouse_holes"></div>
-            </div>
-            <div class="icon-wrap icon-ribbon hide" data-idx="1">
-              <div class="ribbon"></div>
-            </div>
-            <%if(theme.friends && theme.friends.length != 0){%>
-            <div class="icon-wrap icon-link hide" data-idx="2">
-              <div class="loopback_l"></div>
-              <div class="loopback_r"></div>
-            </div>
-            <%}%>
-            <%if(theme.aboutme){%>
-            <div class="icon-wrap icon-me hide" data-idx="3">
-              <div class="user"></div>
-              <div class="shoulder"></div>
-            </div>
-            <%}%>
-          </div>
+        <div class="icon-ctn">
+          <div class="iconfont icon-home" data-idx="0"></div>
+          <div class="iconfont icon-tag hide" data-idx="1"></div>
+          <%if(theme.friends && theme.friends.length != 0){%>
+          <div class="iconfont icon-link hide" data-idx="2"></div>
+          <%}%>
+          <%if(theme.aboutme){%>
+          <div class="iconfont icon-user hide" data-idx="3"></div>
+          <%}%>
         </div>
         <div class="tips-box hide">
           <div class="tips-arrow"></div>
