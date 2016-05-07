@@ -20,14 +20,14 @@ tags: [WEB]
 
 #### **点击发送按钮时，键盘会收回**
 
-![input](/uploads/20150506/input.png)
+![input](/uploads/wechat-board/input.png)
 
 如图所示，由于发送按钮是个Button，当用户点击发送后，由于输入框失去了聚集，键盘就会自动收回。然而，这对于用户体验来说问题十分大的经过学长（[小王](http://blog.hi-hi.cn/)、[加贝](http://vgee.cn/)）的指导，`将按钮用Input标签代替，用CSS将Input改成Buton的模样，当点击时继续聚焦到文字输入框`，这样由于发送和输入都是输入框，键盘自然就不会收回了。
 
 
 #### **Emoji表情的处理与显示**
 
-![emoji](/uploads/20150506/emoji.png)
+![emoji](/uploads/wechat-board/emoji.png)
 
 Emoji的处理是非常蛋疼的
 
@@ -63,4 +63,4 @@ Emoji的处理是非常蛋疼的
 
 我们共同开发的两个人都是后端的，然而一些简单的前端页面又是必须的，用的都是原生CSS，界面虽一般，但能用就行
 
-![发送图片](/uploads/20150506/chat1.png) ![聊天](/uploads/20150506/chat2.png)
+![发送图片](/uploads/wechat-board/chat1.png) ![聊天](/uploads/wechat-board/chat2.png)

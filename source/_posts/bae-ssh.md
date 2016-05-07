@@ -25,11 +25,11 @@ tags: [BAE, SSH, Node.js]
 
 * 创建好后将`Port`的端口改为`22`，如图所示
 
-![端口](/uploads/20150313/port.png)
+![端口](/uploads/bae-ssh/port.png)
 
 * 复制代码库地址，克隆下来
 
-![代码库](/uploads/20150313/git_svn.png)
+![代码库](/uploads/bae-ssh/git_svn.png)
 
 #### **添加公钥**
 
@@ -41,7 +41,7 @@ $ cat ~/.ssh/id_rsa.pub #得到公钥内容
 ```
 
 * 打开刚从BAE克隆下来的文件夹，将得到的公钥内容复制到`app.conf`文件中
-  ![添加公钥](/uploads/20150313/id_rsa.png)
+  ![添加公钥](/uploads/bae-ssh/id_rsa.png)
 
 * 这时可以通过`ssh bae@[ip] –p [port]`测试，看能否正常连接
 
@@ -53,7 +53,7 @@ $ cat ~/.ssh/id_rsa.pub #得到公钥内容
 "http-proxy" : "1.9.0"
 ```
 
-![添加http-proxy模块](/uploads/20150313/package.png)
+![添加http-proxy模块](/uploads/bae-ssh/package.png)
 
 * 将以下内容替换`server.js`原有的内容
 
@@ -83,4 +83,4 @@ ssh -C -N -f -g -R 8090:125.221.232.253:80 bae@111.206.45.12 -p 30349
 
 访问百度云提供的域名，已成功映射
 
-![效果展示](/uploads/20150313/result.png)
+![效果展示](/uploads/bae-ssh/result.png)

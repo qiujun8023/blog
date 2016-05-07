@@ -9,7 +9,7 @@ HTTP/1.1协议中共定义了8中请求方法：GET、HEAD、POST、PUT、DELETE
 
 ```http
 GET      获取资源
-POST     更新或创建资源
+PUT      更新或创建资源
 POST     创建资源
 DELETE   删除资源
 ```

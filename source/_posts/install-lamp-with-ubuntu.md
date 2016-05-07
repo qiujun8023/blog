@@ -52,7 +52,7 @@ phpinfo();
 
 保存后访问 `http://localhost/test.php`，显示内容如下就表示PHP模块安装成功了
 
-  ![phpinfo](/uploads/20150504/phpinfo.png)
+  ![phpinfo](/uploads/install-lamp-with-ubuntu/phpinfo.png)
 
 * 安装MySQL，安装过程中会要求设置MySQL的密码，设置即可
 

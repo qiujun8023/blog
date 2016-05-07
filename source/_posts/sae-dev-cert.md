@@ -21,4 +21,4 @@ tags: SAE
 
 #### **新浪云开发者证书样例**
 
-![效果展示](/uploads/20150314/psb.jpg)
+![效果展示](/uploads/sae-dev-cert/psb.jpg)

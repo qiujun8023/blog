@@ -75,7 +75,7 @@ $ git push origin gh-pages
 
 在GitHub的Blog项目找到主分支切换，选择gh-pages分支
 
-![分支切换](/uploads/20150109/gh-pages.png)
+![分支切换](/uploads/jekyll-blog/gh-pages.png)
 
 * 删除GitHub的master分支
 
@@ -204,7 +204,7 @@ $ jekyll server
 
 正常会在4000端口运行，用浏览器打开`127.0.0.1:4000`,如果看到以下的内容，那么就搭建成功了
 
-![浏览器打开效果](/uploads/20150109/my_blog.png)
+![浏览器打开效果](/uploads/jekyll-blog/my_blog.png)
 
 #### **Push到GitHub**
 

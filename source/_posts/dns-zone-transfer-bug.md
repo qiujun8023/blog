@@ -26,7 +26,7 @@ DNS服务器分为：主服务器、备份服务器和缓存服务器。在主�
 $ dig example.com
 ```
 
-![1](/uploads/20150505/dns-1.png)
+![1](/uploads/dns-zone-transfer-bug/dns-1.png)
 
 * 假如`example.com`的DNS服务器为`dns.example.com`
 
@@ -34,4 +34,4 @@ $ dig example.com
 $ dig axfr @dns.example.com example.com
 ```
 
-![2](/uploads/20150505/dns-2.png)
+![2](/uploads/dns-zone-transfer-bug/dns-2.png)

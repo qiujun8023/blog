@@ -16,7 +16,7 @@ tags: [Python]
 
 #### **大致思路**
 * 先打开原始图片
-![验证码1](/uploads/20150123/code-1.jpg) ![验证码2](/uploads/20150123/code-2.jpg) ![验证码3](/uploads/20150123/code-3.jpg)
+![验证码1](/uploads/python-captcha/code-1.jpg) ![验证码2](/uploads/python-captcha/code-2.jpg) ![验证码3](/uploads/python-captcha/code-3.jpg)
 
 ```python
 import Image
@@ -30,7 +30,7 @@ im = im.convert('L')
 ```
 
 灰度处理后的效果
-![验证码灰度后1](/uploads/20150123/code-L-1.jpg) ![验证码灰度后2](/uploads/20150123/code-L-2.jpg) ![验证码灰度后3](/uploads/20150123/code-L-3.jpg)
+![验证码灰度后1](/uploads/python-captcha/code-L-1.jpg) ![验证码灰度后2](/uploads/python-captcha/code-L-2.jpg) ![验证码灰度后3](/uploads/python-captcha/code-L-3.jpg)
 
 * 根据阀值(threshold)生成表table再根据table对图片二值化处理
 
@@ -41,7 +41,7 @@ im = im.point(table, '1')
 ```
 
 二值化处理后的效果
-![验证码二值化后1](/uploads/20150123/code-b-1.jpg) ![验证码二值化后2](/uploads/20150123/code-b-2.jpg) ![验证码二值化后3](/uploads/20150123/code-b-3.jpg)
+![验证码二值化后1](/uploads/python-captcha/code-b-1.jpg) ![验证码二值化后2](/uploads/python-captcha/code-b-2.jpg) ![验证码二值化后3](/uploads/python-captcha/code-b-3.jpg)
 
 * 将二值化后的图片转为字符串
 
@@ -100,14 +100,14 @@ for i in range(imgNum):
 ```
 
 分割后部分图片效果
-![验证码分割后后0](/uploads/20150123/code-1-0.jpg) ![验证码分割后后1](/uploads/20150123/code-1-1.jpg) ![验证码分割后后2](/uploads/20150123/code-1-2.jpg) ![验证码分割后后3](/uploads/20150123/code-1-3.jpg)
+![验证码分割后后0](/uploads/python-captcha/code-1-0.jpg) ![验证码分割后后1](/uploads/python-captcha/code-1-1.jpg) ![验证码分割后后2](/uploads/python-captcha/code-1-2.jpg) ![验证码分割后后3](/uploads/python-captcha/code-1-3.jpg)
 
 图片手动选择
 * 这一步我处理的很蛋痛
 * 这一步的目的就是用后面的代码生成数据库
 * 操作方法：手动选择较好的图片并将图片
 
-![手动分类](/uploads/20150123/part.jpg)
+![手动分类](/uploads/python-captcha/part.jpg)
 
 * 灰度处理后二值化，然后统计，生成字符数据库
 
