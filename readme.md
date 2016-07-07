@@ -19,4 +19,4 @@ hexo-blog
 
 #### DEMO
 
-* https://qious.cn/
+* https://qiujun.me/

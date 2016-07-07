@@ -132,7 +132,7 @@ $ sudo apt-get install nginx
 ```nginx
 server {
     listen 443 http2;
-    server_name  qious.cn www.qious.cn;
+    server_name  qiujun.me www.qiujun.me;
 
     ssl on;
     ssl_certificate     /usr/local/ssl/certs/server.crt;

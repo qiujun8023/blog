@@ -8,8 +8,8 @@ date: 2016-04-26
 * 邱俊 / 男 / 1996
 * 2017.06毕业 / 四年制本科
 * 湖南科技大学 / 计算机科学与技术专业
-* 博客：[qious.cn](https://qious.cn/) / GitHub： [github.com/qious](https://github.com/qious)
-* QQ: [351310146](http://wpa.qq.com/msgrd?v=3&uin=351310146&site=qq&menu=yes) / Mail: [mail@qious.cn](mailto:mail@qious.cn)
+* 博客：[qiujun.me](https://qiujun.me/) / GitHub： [github.com/qious](https://github.com/qious)
+* QQ: [351310146](http://wpa.qq.com/msgrd?v=3&uin=351310146&site=qq&menu=yes) / Mail: [qious@qq.com](mailto:qious@qq.com)
 
 ### **技能清单**
 
@@ -34,7 +34,7 @@ date: 2016-04-26
 * 基于 Cron 的成绩提醒、图书自动续借、图书超期提醒、一卡通提醒等功能 (通过邮件、微信、Socket等)
 * 基于 Socket.io 的实时日志、在线用户、推送、彩蛋等功能
 * 为其他同学提供 HTTP + JSON 的API(同学在此基础上开发了安卓客户端)
-* GitHub地址：[github.com/qious/hnust](https://github.com/qious/hnust) (已去除敏感数据)
+* GitHub详细介绍：[github.com/qious/hnust](https://github.com/qious/hnust)
 
 #### **湖南科技大学企业号**(主力开发成员、负责人)
 
@@ -84,13 +84,6 @@ date: 2016-04-26
 
 ![微信签到](/uploads/about/sign.png) ![开始签到](/uploads/about/signin.png)
 
-#### **一卡通学期账单分析**（独立完成）
-
-* 对一卡通消费数据进行简单统计分析
-* 由于数据太少，数据分析能力弱。[DEMO>>](http://bill.qious.cn)
-
-![一卡通](/uploads/about/bill.png)
-
 #### **闲置Docker**（独立完成）
 
 利用学校闲置的服务器，使用Docker主要搭建了以下工具:
@@ -98,8 +91,3 @@ date: 2016-04-26
 * 内网Samba文件共享
 * [基于Gogs的Git服务器](http://git.ticknet.cn/)
 * 为其他同学提供实验平台。利用闲置服务器搭建的Docker
-
-#### **基于ZStack的校园私有云**(成员参与)
-
-* 基于ZStack进行二次开发(校大学生创新重点项目)
-* 由于ZStack提供一键式部署，并未投入过多精力。

@@ -10,7 +10,7 @@ tags: [HNUST, Ubuntu]
 
 注意：目前只是把把电子科技大学的 `Ubuntu 14.04` 源同步了下来
 
-源的地址为：`http://mirror.qious.cn/ubuntu/`
+源的地址为：`http://mirror.qiujun.me/ubuntu/`
 
 <!-- more -->
 
@@ -32,18 +32,18 @@ $ sudo vim /etc/apt/sources.list
 
 ```bash
 #湖南科技大学内网源
-deb http://mirror.qious.cn/ubuntu/ trusty main restricted
-deb-src http://mirror.qious.cn/ubuntu/ trusty main restricted
-deb http://mirror.qious.cn/ubuntu/ trusty-updates main restricted
-deb-src http://mirror.qious.cn/ubuntu/ trusty-updates main restricted
-deb http://mirror.qious.cn/ubuntu/ trusty universe
-deb-src http://mirror.qious.cn/ubuntu/ trusty universe
-deb http://mirror.qious.cn/ubuntu/ trusty-updates universe
-deb-src http://mirror.qious.cn/ubuntu/ trusty-updates universe
-deb http://mirror.qious.cn/ubuntu/ trusty-security main restricted
-deb-src http://mirror.qious.cn/ubuntu/ trusty-security main restricted
-deb http://mirror.qious.cn/ubuntu/ trusty-security universe
-deb-src http://mirror.qious.cn/ubuntu/ trusty-security universe
+deb http://mirror.qiujun.me/ubuntu/ trusty main restricted
+deb-src http://mirror.qiujun.me/ubuntu/ trusty main restricted
+deb http://mirror.qiujun.me/ubuntu/ trusty-updates main restricted
+deb-src http://mirror.qiujun.me/ubuntu/ trusty-updates main restricted
+deb http://mirror.qiujun.me/ubuntu/ trusty universe
+deb-src http://mirror.qiujun.me/ubuntu/ trusty universe
+deb http://mirror.qiujun.me/ubuntu/ trusty-updates universe
+deb-src http://mirror.qiujun.me/ubuntu/ trusty-updates universe
+deb http://mirror.qiujun.me/ubuntu/ trusty-security main restricted
+deb-src http://mirror.qiujun.me/ubuntu/ trusty-security main restricted
+deb http://mirror.qiujun.me/ubuntu/ trusty-security universe
+deb-src http://mirror.qiujun.me/ubuntu/ trusty-security universe
 ```
 
 * 更新软件列表

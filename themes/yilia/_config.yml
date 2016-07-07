@@ -3,11 +3,11 @@ menu:
   首页: /
   所有文章: /archives/
   个人简介: /about.html
-  旧版博客: https://old.qious.cn
+  旧版博客: https://old.qiujun.me
 
 # SubNav
 subnav:
-  mail: mailto:mail@qious.cn
+  mail: mailto:qious@qq.com
   github: https://github.com/qious
   rss: /atom.xml
   #weibo: "#"

@@ -5,14 +5,14 @@
 # Site
 title: 邱俊的博客（Jun Qiu's Blog）
 subtitle:
-description: 博客,技术博客,邱俊的博客,邱俊的主页,blog,qiujun
+description: 博客,技术博客,邱俊的博客,邱俊的主页,blog,qiujun,qious
 author: Fly俊
 language: zh-Hans
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://qious.cn
+url: https://qiujun.me
 root: /
 permalink: post/:title/
 permalink_defaults:
@@ -69,5 +69,5 @@ theme: yilia
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: qiujun@qious.cn:blog/hexo/.git
+  repo: qiujun@ali.qiujun.me:blog/hexo/.git
   branch: master
