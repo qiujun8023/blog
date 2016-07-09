@@ -34,10 +34,10 @@ $ openssl version -a
 如果版本低于1.0.2则执行下面的升级命令
 
 ```bash
-$ wget http://openssl.org/source/openssl-1.0.2g.tar.gz
-$ tar zxvf openssl-1.0.2g.tar.gz
-$ cd openssl-1.0.2g
-$ ./configure && make && sudo make install
+$ wget http://openssl.org/source/openssl-1.0.2h.tar.gz
+$ tar zxvf openssl-1.0.2h.tar.gz
+$ cd openssl-1.0.2h
+$ ./config && make && sudo make install
 ```
 
 上述命令使用默认配置源码安装OpenSSL，可以根据情况自定义，安装后再覆盖原有OpenSSL
@@ -59,8 +59,8 @@ $ sudo echo "/usr/local/ssl/lib" >>/etc/ld.so.conf
 * 移动key文件和crt文件到ssl目录下(可选)
 
 ```bash
-$ mv server.crt /usr/local/ssl/certs/
-$ mv server.key /usr/local/ssl/private/
+$ sudo mv server.crt /usr/local/ssl/certs/
+$ sudo mv server.key /usr/local/ssl/private/
 ```
 
 #### **安装或升级Nginx**
@@ -98,36 +98,35 @@ $ make && sudo make upgrade #升级
 
 ##### **apt-get方式安装、升级Nginx**
 
-* 由于需要1.9及以上版本的Nginx，所以这里需要安装mainline版本
+* 由于需要1.9及以上版本的Nginx，这里选择了PPA源
 
 ```bash
-$ sudo vim /etc/apt/sources.list
-```
-
-* 用`vim`打开后添加以下两行，也可以用`echo`命令添加
-
-```bash
-deb http://nginx.org/packages/mainline/ubuntu/ trusty nginx
-deb-src http://nginx.org/packages/mainline/ubuntu/ trusty nginx
-```
-
-* 添加apt-key
-
-```bash
-$ wget http://nginx.org/keys/nginx_signing.key
-$ sudo apt-key add nginx_signing.key
-```
-
-* 更新源并安装、升级
-
-```bash
+$ sudo add-apt-repository --remove ppa:nginx/stable
+$ sudo add-apt-repository ppa:ondrej/nginx
 $ sudo apt-get update
 $ sudo apt-get install nginx
 ```
 
+查看Nginx的版本信息
+
+```bash
+$ nginx -V
+```
+
+将显示类似与如下内容
+
+```
+nginx version: nginx/1.10.1
+built with OpenSSL 1.0.2h  3 May 2016
+TLS SNI support enabled
+configure arguments: ...
+```
+
+其中的OpenSSL的版本号大于1.0.2即可
+
 #### **配置Nginx**
 
-配置文件内容类似与下
+在`/etc/nginx/conf.d/`任意新建一个配置文件，内容类似于下
 
 ```nginx
 server {
