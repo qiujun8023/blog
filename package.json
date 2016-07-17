@@ -1,13 +1,13 @@
 {
-  "name": "qiujun's blog",
-  "version": "0.1.0",
+  "name": "hexo-blog",
+  "version": "0.1.1",
   "private": true,
   "hexo": {
-    "version": "3.2.0"
+    "version": "3.2.2"
   },
   "dependencies": {
     "hexo": "^3.2.0",
-    "hexo-all-minifier": "0.0.12",
+    "hexo-all-minifier": "^0.0.12",
     "hexo-deployer-git": "^0.1.0",
     "hexo-generator-archive": "^0.1.4",
     "hexo-generator-category": "^0.1.3",

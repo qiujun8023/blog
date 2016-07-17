@@ -37,7 +37,7 @@ analytics:
 # favicon: /logo.png
 
 #你的头像url
-avatar: //q.qlogo.cn/headimg_dl?fid=blog&spec=100&dst_uin=351310146
+avatar: /logo.png
 #是否开启多说评论，填写你在多说申请的项目名称 duoshuo: duoshuo-key
 duoshuo: qiujun
 #是否开启云标签
@@ -53,6 +53,7 @@ friends:
   JailBreak的博客: http://vgee.cn/
   Trumi的博客: http://trumi.cn/
   TT的博客: http://blog.silenttt.top/
+  猫尾博客: https://cattail.me/
 
 #是否开启“关于我”。
 #不开启——
