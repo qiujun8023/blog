@@ -1,6 +1,6 @@
 ---
 title: 个人简介
-date: 2016-04-26
+date: 2016-07-25
 ---
 
 ### **基本信息**
@@ -9,14 +9,15 @@ date: 2016-04-26
 * 2017.06毕业 / 四年制本科
 * 湖南科技大学 / 计算机科学与技术专业
 * 博客：[qiujun.me](https://qiujun.me/) / GitHub： [github.com/qious](https://github.com/qious)
-* QQ: [351310146](http://wpa.qq.com/msgrd?v=3&uin=351310146&site=qq&menu=yes) / Mail: [qious@qq.com](mailto:qious@qq.com)
+* QQ: [351310146](http://wpa.qq.com/msgrd?v=3&uin=351310146&site=qq&menu=yes) / Mail: [i@qiujun.me](mailto:i@qiujun.me)
 
 ### **技能清单**
 
-* 熟悉PHP、Node.js、Python等
-* 熟悉AngularJS、Gulp、CoffeeScript等
+* 熟悉PHP，了解Composer
+* 熟悉Node.js，了解ES6基本特性
+* 熟悉Gulp、CoffeeScript、Babel
 * 熟悉MySQL，了解Redis、MongoDB等NoSQL
-* 熟悉 BootStrap、Semantic UI 等前端框架
+* 熟悉AngularJs，了解React
 * 熟悉微信平台、微信企业号的开发与运维
 * 熟悉Linux，有IaaS、PaaS、SaaS等开发及管理经验
 * 有过ACM经历，获得过省级、市级、校级奖励
@@ -77,10 +78,9 @@ date: 2016-04-26
 
 此项目主要为了解决学校大一大二学生每周体育锻炼签到签到问题
 
-由于微信限制，定位主要利用WIFI定位数据，同时提供扫码签到等作为辅助方案
-* 签到主要有定位签到和扫码签到(基于微信平台)，扫码为定位失败的补充
+* 签到主要有定位签到和扫码签到（基于微信平台），扫码为定位失败的补充
+* 由于手机GPS较差，定位以WIFI定位为主
 * 扫码使用为动态二维码，使用Socket签到一个换一个(一次只能扫一个)或定时更换两种方案
-* 数据与学校人事系统对接
 
 ![微信签到](/uploads/about/sign.png) ![开始签到](/uploads/about/signin.png)
 
@@ -90,4 +90,4 @@ date: 2016-04-26
 * 内网Ubuntu 14.04源
 * 内网Samba文件共享
 * [基于Gogs的Git服务器](http://git.ticknet.cn/)
-* 为其他同学提供实验平台。利用闲置服务器搭建的Docker
+* 为其他同学提供实验平台
