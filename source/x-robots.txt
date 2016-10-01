@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Disallow: /js/
+Disallow: /css/
+Disallow: /fonts/
+
+Sitemap: https://qiujun.me/sitemap.xml

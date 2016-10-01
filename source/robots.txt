@@ -1,9 +1,5 @@
-# hexo robots.txt
+# 默认规则，访问服务商提供的默认域名被抓取
+# 自定义域名访问时，会 Rewrite 到 x-robots.txt
+
 User-agent: *
-Allow: /
-
-Disallow: /js/
-Disallow: /css/
-Disallow: /fonts/
-
-Sitemap: https://qiujun.me/sitemap.xml
+Disallow: /
