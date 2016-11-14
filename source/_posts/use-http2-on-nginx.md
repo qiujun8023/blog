@@ -52,16 +52,11 @@ $ sudo echo "/usr/local/ssl/lib" >>/etc/ld.so.conf
 
 #### **准备SSL证书**
 
-如果已经有SSL证书的用户此步可以略过
-
-* 申请[免费的沃通证书](https://buy.wosign.com/FreeSSL.html)，填写一些简单资料，证书很快就可以下发
-* 分别解压下载的zip文件后zip文件里面的for Nginx.zip，得到一个key文件和一个crt文件
-* 移动key文件和crt文件到ssl目录下(可选)
-
-```bash
-$ sudo mv server.crt /usr/local/ssl/certs/
-$ sudo mv server.key /usr/local/ssl/private/
-```
+下面提供些免费 SSL 申请渠道
+* [Let's Encrypt](https://letsencrypt.org/)
+* [阿里云云盾证书服务](https://common-buy.aliyun.com/?commodityCode=cas#/buy)
+* [腾讯云 SSL 证书](https://www.qcloud.com/product/ssl.html)
+* ...
 
 #### **安装或升级Nginx**
 
@@ -134,8 +129,8 @@ server {
     server_name  qiujun.me www.qiujun.me;
 
     ssl on;
-    ssl_certificate     /usr/local/ssl/certs/server.crt;
-    ssl_certificate_key /usr/local/ssl/private/server.key;
+    ssl_certificate     /usr/local/ssl/certs/server.pem; # SSL 证书 pem 文件位置
+    ssl_certificate_key /usr/local/ssl/private/server.key; # SSL 证书 key 文件位置
 
     ...
 }
