@@ -2,7 +2,7 @@
 menu:
   首页: /
   所有文章: /archives/
-  个人简介: /about.html
+  个人简历: https://cdn.qiujun.me/resume.pdf
 
 # SubNav
 subnav:
@@ -33,10 +33,10 @@ open_in_new: false
 # Miscellaneous
 analytics:
   baidu: 20fb39a5201df3690d5ce8cc36e7d1f7
-# favicon: /logo.png
+# favicon: /logo.jpg
 
 #你的头像url
-avatar: /logo.png
+avatar: /logo.jpg
 #是否开启多说评论，填写你在多说申请的项目名称 duoshuo: duoshuo-key
 duoshuo: qiujun
 #是否开启云标签
