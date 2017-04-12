@@ -1,11 +1,18 @@
 <footer id="footer">
   <div class="outer">
-    <div class="footer-left">
-      &copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %>
+    <div id="footer-info">
+      <% if (theme.upyun_league) { %>
+        <a class="footer-left" href="https://upyun.com" target="_blank">
+    			<img src="//cdn.qiujun.me/images/upyun_logo.png" alt="upyun">
+    		</div>
+      <% } else { %>
+      	<div class="footer-left">
+      		&copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %>
+      	</div>
+      <% } %>
+    	<div class="footer-right">
+    		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/qious/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+    	</div>
     </div>
-    <div class="footer-right">提供CDN加速服务</div>
-    <a class="footer-right" href="https://upyun.com" target="_blank">
-      <img src="/img/upyun_logo_90x45.png" alt="upyun">
-    </a>
   </div>
 </footer>

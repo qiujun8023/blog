@@ -5,11 +5,11 @@
 # Site
 title: 邱俊的博客（Jun Qiu's Blog）
 subtitle:
-keywords: 博客,技术博客,邱俊的博客,Fly俊,blog,qiujun,qious,
+keywords: 邱俊的博客,Fly俊,qiujun,qious
 description: 邱俊的博客
-author: 俊
+author: Fly俊
 language: zh-Hans
-timezone:
+timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -31,6 +31,7 @@ skip_render: redirect.html
 # Writing
 new_post_name: :title.md # File name of new posts
 default_layout: post
+auto_spacing: false
 titlecase: false # Transform title into titlecase
 external_link: true # Open external links in new tab
 filename_case: 0
@@ -48,6 +49,27 @@ highlight:
 default_category: uncategorized
 category_map:
 tag_map:
+
+disqus_shortname: qiujun
+
+jsonContent:
+    meta: false
+    pages: false
+    posts:
+      title: true
+      date: true
+      path: true
+      text: true
+      raw: false
+      content: false
+      slug: false
+      updated: false
+      comments: false
+      link: false
+      permalink: false
+      excerpt: false
+      categories: false
+      tags: true
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date

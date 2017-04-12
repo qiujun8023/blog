@@ -1,26 +1,20 @@
-<% if (theme.fancybox){ %>
-  <%- css('//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min') %>
-<% } %>
-
 <script>
-  var yiliaConfig = {
-    fancybox: <%=theme.fancybox%>,
-    mathjax: <%=theme.mathjax%>,
-    animate: <%=theme.animate%>,
-    isHome: <%=is_home()%>,
-    isPost: <%=is_post()%>,
-    isArchive: <%=is_archive()%>,
-    isTag: <%=is_tag()%>,
-    isCategory: <%=is_category()%>,
-    open_in_new: <%=theme.open_in_new%>
-  }
+	var yiliaConfig = {
+		mathjax: <%=theme.mathjax%>,
+		isHome: <%=is_home()%>,
+		isPost: <%=is_post()%>,
+		isArchive: <%=is_archive()%>,
+		isTag: <%=is_tag()%>,
+		isCategory: <%=is_category()%>,
+		open_in_new: <%=theme.open_in_new%>,
+		root: "<%=config.root%>",
+		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+	}
 </script>
-<%- js('//cdn.bootcss.com/require.js/2.1.6/require.min.js') %>
-<%- js('//cdn.bootcss.com/jquery/1.9.1/jquery.min.js') %>
-<%- js('js/main') %>
 
-<%- partial('analytics') %>
+<%- partial('script') %>
 
 <% if (theme.mathjax){ %>
-  <%- partial('mathjax') %>
+<%- partial('mathjax') %>
 <% } %>
