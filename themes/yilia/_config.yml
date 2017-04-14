@@ -92,12 +92,14 @@ smart_menu:
   aboutme: false
 
 friends:
-  陈康'Blog: http://www.kchen.cn/
+  "陈康'Blog": http://www.kchen.cn/
   刘卓旻的博客: http://trumi.cn/
   TT的博客: http://blog.silenttt.top/
   孙宗正的博客: https://zzsun.cc/
   wangkechun的博客: http://blog.hi-hi.cn/
   JailBreak的博客: http://vgee.cn/
   猫尾博客: https://cattail.me/
+  Blog via Mateor: https://mateor.me
+  "ltaoo's web": https://ltaoo.github.io/
 
 aboutme: false
