@@ -1,7 +1,7 @@
 ---
 title: 使用 BAE 与又拍云联合 Rewrite
 date: 2016-11-10
-tags: [BAE, UPYUN, HTTPS]
+tags: [BAE, UpYun, HTTPS]
 ---
 
 #### **背景**
