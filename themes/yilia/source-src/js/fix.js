@@ -18,12 +18,20 @@ function init() {
 			}
 		})
 	}
+	// 目录序号
+	if (yiliaConfig && yiliaConfig.toc_hide_index) {
+		let $a = document.querySelectorAll(('.toc-number'))
+		$a.forEach(($em) => {
+			$em.style.display = 'none';
+		})
+	}
 
 	// about me 转义
 	var $aboutme = document.querySelector('#js-aboutme')
 	if ($aboutme && $aboutme.length !== 0) {
 		$aboutme.innerHTML = $aboutme.innerText
 	}
+	
 }
 
 module.exports = {

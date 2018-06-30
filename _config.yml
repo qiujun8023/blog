@@ -59,7 +59,7 @@ default_category: uncategorized
 category_map:
 tag_map:
 
-disqus_shortname: qiujun
+disqus_shortname:
 
 jsonContent:
     meta: false
