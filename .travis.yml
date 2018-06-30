@@ -1,0 +1,27 @@
+language: node_js
+
+node_js:
+  - "lts/*"
+
+branches:
+  only:
+    - master
+
+cache:
+  directories:
+    - node_modules
+
+install:
+  - npm install -q
+  - npm install -q -g hexo-cli
+  - wget http://collection.b0.upaiyun.com/softwares/upx/upx-linux-amd64-v0.2.3 -O upx
+  - chmod 755 upx
+
+before_script:
+  - hexo clean
+
+script:
+  - hexo generate
+
+after_success:
+  - ./upx --auth $UPX_AUTH sync -delete --strong ./public
