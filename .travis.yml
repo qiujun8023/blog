@@ -24,5 +24,7 @@ before_script:
 script:
   - hexo generate
 
-after_success:
-  - ./upx --auth $UPX_AUTH sync -delete --strong ./public
+deploy:
+  provider: script
+  skip-cleanup: true
+  script: ./upx --auth $UPX_AUTH sync -delete --strong ./public
