@@ -68,7 +68,7 @@ google_analytics: ''
 favicon:
 
 #你的头像url
-avatar: //cdn.qiujun.me/images/logo.png!avatar
+avatar: //cdn.qiujun.me/image/2018/09/04/9c4e315f9b7f622805837c6eada1cd22.png!/crop/694x694a80a0/fw/256/format/jpg
 
 upyun_league: true
 
