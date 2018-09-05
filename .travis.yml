@@ -3,10 +3,6 @@ language: node_js
 node_js:
   - "lts/*"
 
-branches:
-  only:
-    - master
-
 cache:
   directories:
     - node_modules
@@ -23,8 +19,15 @@ before_script:
 
 script:
   - hexo generate
+  - rm -rf deploy
+  - mkdir -p deploy/project
+  - mv public deploy/project/blog
 
 deploy:
   provider: script
   skip-cleanup: true
-  script: ./upx --auth $UPX_AUTH sync -delete --strong ./public
+  script: ./upx --auth $UPX_AUTH sync -delete --strong ./deploy
+
+branches:
+  only:
+    - master
