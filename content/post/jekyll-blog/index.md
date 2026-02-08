@@ -4,7 +4,7 @@ date: '2015-01-09T00:00:00.000Z'
 description: 详细指导如何利用 GitHub Pages 托管服务与 Jekyll 静态网站生成器构建个人博客。内容包括搭建本地 Ruby 与 Jekyll 环境、创建 GitHub 项目、管理分支、配置站点结构及最终推送到 GitHub 的全过程。
 tags:
   - Jekyll
-  - GitHub Pages
+  - GitHub
   - 静态网站
 categories:
   - 运维

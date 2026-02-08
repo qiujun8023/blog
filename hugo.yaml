@@ -8,6 +8,8 @@ params:
     mainSections:
         - post
     featuredImageField: image
+    dateFormat:
+        published: "2006-01-02"
 
     sidebar:
         # emoji: ☕️
@@ -29,7 +31,8 @@ params:
 
     footer:
         since: 2015
-        customText: Qiujun's Blog
+        icp: "湘ICP备2026004167号-1"
+        # beian: "湘公网安备 xxxx号"
 
     article:
         math: false

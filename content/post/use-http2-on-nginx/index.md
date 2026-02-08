@@ -4,7 +4,7 @@ date: '2016-04-17T00:00:00.000Z'
 description: 详细讲解如何在 Nginx 服务器上启用 HTTP/2 协议。文章首先阐述了 HTTP/2 协议的二进制分帧、多路复用等特性，接着介绍了对 OpenSSL 和 Nginx 版本的环境要求，并分别演示了源码安装与 PPA 方式升级 Nginx 及配置 TLS 证书的完整步骤。
 tags:
   - Nginx
-  - HTTP/2
+  - HTTP
   - HTTPS
 categories:
   - 运维

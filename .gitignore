@@ -16,3 +16,4 @@ npm-debug.log*
 
 # Hugo 模块缓存
 .hugo_cache/
+_vendor/
