@@ -8,7 +8,7 @@ tags:
   - PHP
   - MySQL
 categories: []
-image: /uploads/install-lamp-with-ubuntu/phpinfo.png
+image: images/phpinfo.png
 ---
 
 以下是在 Debian 及 Ubuntu 安裝 Apache、PHP、MySQL的步驟及相关问题的解决办法
@@ -59,7 +59,7 @@ phpinfo();
 
 保存后访问 `http://localhost/test.php`，显示内容如下就表示PHP模块安装成功了
 
-  ![phpinfo](/uploads/install-lamp-with-ubuntu/phpinfo.png)
+  ![phpinfo](images/phpinfo.png)
 
 * 安装MySQL，安装过程中会要求设置MySQL的密码，设置即可
 

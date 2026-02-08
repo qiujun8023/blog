@@ -5,7 +5,7 @@ description: null
 tags:
   - SAE
 categories: []
-image: /uploads/sae-dev-cert/psb.jpg
+image: images/psb.jpg
 ---
 
 #### **申请的过程与经历**
@@ -25,4 +25,4 @@ image: /uploads/sae-dev-cert/psb.jpg
 
 #### **新浪云开发者证书样例**
 
-![效果展示](/uploads/sae-dev-cert/psb.jpg)
+![效果展示](images/psb.jpg)

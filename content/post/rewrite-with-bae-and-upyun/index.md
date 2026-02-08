@@ -7,7 +7,7 @@ tags:
   - UpYun
   - HTTPS
 categories: []
-image: /uploads/rewrite-with-bae-and-upyun/flow.png
+image: images/flow.png
 ---
 
 #### **背景**
@@ -34,7 +34,7 @@ image: /uploads/rewrite-with-bae-and-upyun/flow.png
 
 #### **流程**
 
-![流程图](/uploads/rewrite-with-bae-and-upyun/flow.png)
+![流程图](images/flow.png)
 
 #### **步骤**
 
@@ -45,7 +45,7 @@ image: /uploads/rewrite-with-bae-and-upyun/flow.png
 
 * 注册 `BAE` 并创建应用，由于只是用来放静态博客及保留备案，这里选择最便宜的，大概 3 元一个月
 
-![创建应用](/uploads/rewrite-with-bae-and-upyun/bae.png)
+![创建应用](images/bae.png)
 
 * 在 BAE 的 Git 仓库根目录下 app.conf 的内容如下：
 
@@ -72,7 +72,7 @@ handlers:
 
 * 然后将 `www.qiujun.me` CNAME 解析到 `qiujun.duapp.com`，过一段时间可以看到类似的图片（假定在百度云备案已经完成）
 
-![备案](/uploads/rewrite-with-bae-and-upyun/beian.png)
+![备案](images/beian.png)
 
 这一步主要用于保留备案，防止被监测说域名未接入 BAE。由于都是直接接入 BAE ，所以 `www.qiujun.me` 和 `qiujun.duapp.com` 访问效果一致，都会是页面重定向
 
@@ -97,7 +97,7 @@ $WHEN($NOT($EQ($_HOST, qiujun.me)))$REDIRECT($_SCHEME://qiujun.me$_URI$PCALL(?$_
 
 * 然后保存
 
-![Rewrite](/uploads/rewrite-with-bae-and-upyun/rewrite.png)
+![Rewrite](images/rewrite.png)
 
 到这里所有的步骤就都完成了
 

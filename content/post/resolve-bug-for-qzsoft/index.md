@@ -6,16 +6,16 @@ tags:
   - HNUST
   - Chrome
 categories: []
-image: /uploads/resolve-bug-for-qzsoft/jwc.png
+image: images/jwc.png
 ---
 
 学校教务系统由于长期缺乏必要的维护，目前依旧只兼容IE8及以下浏览器
 
-![IE8及以下](/uploads/resolve-bug-for-qzsoft/jwc.png)
+![IE8及以下](images/jwc.png)
 
 使用非IE浏览器访问登陆界面是没有问题，但是登录进去后就会报错，并且所有功能都无法使用
 
-![无法创建对象](/uploads/resolve-bug-for-qzsoft/object.png)
+![无法创建对象](images/object.png)
 
 这对于使用非IE浏览器的用户简直就是噩梦，特别对于非Windows用户，以下是简单的解决办法
 
@@ -41,12 +41,12 @@ image: /uploads/resolve-bug-for-qzsoft/jwc.png
 
 #### **插件使用教程**
 
-* [`点击下载插件>>`](/uploads/resolve-bug-for-qzsoft/湖南科技大学教务处修复插件.crx)
+* [`点击下载插件>>`](湖南科技大学教务处修复插件.crx)
 
 * 在谷歌浏览器中打开 [`chrome://extensions/`](chrome://extensions/)
 
 * 将下载好的插件`拖放`至上一步骤打开的 插件管理页面，然后会弹出如下窗口，点击添加即可
 
-  ![添加插件](/uploads/resolve-bug-for-qzsoft/add.png)
+  ![添加插件](images/add.png)
 
 * 然后就可以开开心心的打开教务网了
