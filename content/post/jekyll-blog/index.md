@@ -6,7 +6,7 @@ tags:
   - Jekyll
   - GitHub
 categories: []
-image: images/gh-pages.png
+image: null
 ---
 
 #### **为什么用GitHub Pages**

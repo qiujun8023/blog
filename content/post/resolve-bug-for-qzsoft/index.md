@@ -6,7 +6,7 @@ tags:
   - HNUST
   - Chrome
 categories: []
-image: images/jwc.png
+image: null
 ---
 
 学校教务系统由于长期缺乏必要的维护，目前依旧只兼容IE8及以下浏览器

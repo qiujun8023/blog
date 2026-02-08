@@ -7,7 +7,7 @@ tags:
   - UpYun
   - HTTPS
 categories: []
-image: images/flow.png
+image: null
 ---
 
 #### **背景**

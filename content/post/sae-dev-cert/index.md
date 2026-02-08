@@ -5,7 +5,7 @@ description: null
 tags:
   - SAE
 categories: []
-image: images/psb.jpg
+image: null
 ---
 
 #### **申请的过程与经历**

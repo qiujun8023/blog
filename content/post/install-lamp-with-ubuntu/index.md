@@ -8,7 +8,7 @@ tags:
   - PHP
   - MySQL
 categories: []
-image: images/phpinfo.png
+image: null
 ---
 
 以下是在 Debian 及 Ubuntu 安裝 Apache、PHP、MySQL的步驟及相关问题的解决办法
