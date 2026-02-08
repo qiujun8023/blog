@@ -1,5 +1,5 @@
 ---
-title: 使用Gulp进行前端版本控制
+title: 使用 Gulp 进行前端版本控制
 date: '2016-05-06T00:00:00.000Z'
 description: 探讨如何利用自动化构建工具 Gulp 解决浏览器缓存带来的静态资源更新不及时问题。文章对比了版本号与 Hash 文件名两种解决思路，并详细演示了如何通过 gulp-rev 与 gulp-rev-collector 插件实现 JS 文件的 Hash 改名及 HTML 引用自动替换的完整工作流。
 tags:
@@ -26,31 +26,31 @@ image: null
 
 但是这种办法有几个缺点：
 * 极少数浏览器可能不会缓存带有查询字符串的请求
-* 如果使用CDN的话，极可能导致部分CDN缓存错误
+* 如果使用 CDN 的话，极可能导致部分 CDN 缓存错误
 * 发布是需要一个过程的，虽然过程及其短暂，但是如果访问量足够大，依然会导致页面的错乱
-> 假如先发布的是HTML后发布的是JS，用户请求到了新版本的HTML和旧版本的JS，导致在以后的显示一直页面错乱
-> 假如先发布JS后发布HTML，用户请求到了旧版HTML和新版的JS，会导致用户在本次的显示页面错乱
+> 假如先发布的是 HTML 后发布的是 JS，用户请求到了新版本的 HTML 和旧版本的 JS，导致在以后的显示一直页面错乱
+> 假如先发布 JS 后发布 HTML，用户请求到了旧版 HTML 和新版的 JS，会导致用户在本次的显示页面错乱
 
-### 文件名带上Hash
+### 文件名带上 Hash
 
 ```html
 <script src="script-abcdefg.min.js"></script>
 ```
 
-* 其中的 abcdefg 则是根据文件 script.min.js 计算出来的Hash值
+* 其中的 abcdefg 则是根据文件 script.min.js 计算出来的 Hash 值
 * 这种办法就很好的解决了以上的问题，同时如此处理还可以开启永久缓存
 * 但是这种就必须要使用一定的自动化构建工具来实现，比如 `gulp`
 
-## 什么是Gulp
+## 什么是 Gulp
 
-> Gulp.js 是一个自动化构建工具，开发者可以使用它在项目开发过程中自动执行常见任务。Gulp.js 是基于 Node.js 构建的，利用 Node.js 流的威力，你可以快速构建项目并减少频繁的 IO 操作。Gulp.js 源文件和你用来定义任务的 Gulp 文件都是通过 JavaScript（或者 CoffeeScript ）源码来实现的。 -- Gulp中文网
+> Gulp.js 是一个自动化构建工具，开发者可以使用它在项目开发过程中自动执行常见任务。Gulp.js 是基于 Node.js 构建的，利用 Node.js 流的威力，你可以快速构建项目并减少频繁的 IO 操作。Gulp.js 源文件和你用来定义任务的 Gulp 文件都是通过 JavaScript（或者 CoffeeScript）源码来实现的。-- Gulp 中文网
 
-Gulp本身只提供最基础的流处理功能，但是你可以用第三库来做很多事情，常见的文件合并、压缩什么的更不是在话下
+Gulp 本身只提供最基础的流处理功能，但是你可以用第三库来做很多事情，常见的文件合并、压缩什么的更不是在话下
 
 
-## 安装Gulp
+## 安装 Gulp
 
-**前提：已经安装好Node与NPM**
+**前提：已经安装好 Node 与 NPM**
 
 ```bash
 $ npm install --global gulp
@@ -58,7 +58,7 @@ $ npm install --global gulp
 
 ## 安装并使用版本控制
 
-安装项目目录下的Gulp
+安装项目目录下的 Gulp
 ```bash
 $ npm install --save gulp
 ```
@@ -68,15 +68,15 @@ $ npm install --save gulp
 $ npm install --save gulp-rev gulp-rev-collector
 ```
 
-安装模块管理插件（此插件会自动分析package.json文件，并自动引入第三方库）
+安装模块管理插件（此插件会自动分析 package.json 文件，并自动引入第三方库）
 ```bash
 $ npm install --save gulp-load-plugins
 ```
 
 编写自动化构建文件
 * 这里定义了两个任务
-* js任务主要对js进行Hash改名并输出到dist目录下（当然正常情况下还会有什么合并、压缩之类的）
-* rev任务主要修改index.html中引入js的文件名
+* js 任务主要对 js 进行 Hash 改名并输出到 dist 目录下（当然正常情况下还会有什么合并、压缩之类的）
+* rev 任务主要修改 index.html 中引入 js 的文件名
 ```bash
 $ vim gulpfile.js # 填入下方内容
 ```
@@ -116,7 +116,7 @@ gulp.task('rev', ['js'], function() {
         └── script.js
 ```
 
-执行上述定义的任务js
+执行上述定义的任务 js
 ```bash
 $ gulp js
 ```
@@ -140,14 +140,14 @@ $ gulp js
         └── script.js
 ```
 
-其中dist/rev/js/rev-manifest.json文件会如下所示
+其中 dist/rev/js/rev-manifest.json 文件会如下所示
 ```json
 {
   "script.js": "script-d41d8cd98f.js"
 }
 ```
 
-然后执行上述定义的任务rev
+然后执行上述定义的任务 rev
 ```bash
 $ gulp rev
 ```
@@ -172,10 +172,10 @@ $ gulp rev
         └── script.js
 ```
 
-同时src/index.html和dist/index.html的差异如下
+同时 src/index.html 和 dist/index.html 的差异如下
 ```diff
 -    <link rel="stylesheet" href="js/script.js">
 +    <link rel="stylesheet" href="js/script-d41d8cd98f.js">
 ```
 
-然后将dist对外发布就可以了
+然后将 dist 对外发布就可以了

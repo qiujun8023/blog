@@ -1,5 +1,5 @@
 ---
-title: 在Nginx上配置HTTP/2+TLS
+title: 在 Nginx 上配置 HTTP/2+TLS
 date: '2016-04-17T00:00:00.000Z'
 description: 详细讲解如何在 Nginx 服务器上启用 HTTP/2 协议。文章首先阐述了 HTTP/2 协议的二进制分帧、多路复用等特性，接着介绍了对 OpenSSL 和 Nginx 版本的环境要求，并分别演示了源码安装与 PPA 方式升级 Nginx 及配置 TLS 证书的完整步骤。
 tags:
@@ -11,11 +11,11 @@ categories:
 image: null
 ---
 
-## 什么是HTTP/2协议
+## 什么是 HTTP/2 协议
 
-> HTTP 2.0即超文本传输协议 2.0，是下一代HTTP协议。是由互联网工程任务组（IETF）的Hypertext Transfer Protocol Bis (httpbis)工作小组进行开发。是自1999年http1.1发布后的首个更新。HTTP 2.0在2013年8月进行首次合作共事性测试。在开放互联网上HTTP 2.0将只用于https:// 网址，而 http:// 网址将继续使用HTTP/1，目的是在开放互联网上增加使用加密技术，以提供强有力的保护去遏制主动攻击。
+> HTTP 2.0 即超文本传输协议 2.0，是下一代 HTTP 协议。是由互联网工程任务组（IETF）的 Hypertext Transfer Protocol Bis (httpbis)工作小组进行开发。是自 1999 年 http1.1 发布后的首个更新。HTTP 2.0 在 2013 年 8 月进行首次合作共事性测试。在开放互联网上 HTTP 2.0 将只用于 https:// 网址，而 http:// 网址将继续使用 HTTP/1，目的是在开放互联网上增加使用加密技术，以提供强有力的保护去遏制主动攻击。
 
-## HTTP/2协议的主要特性
+## HTTP/2 协议的主要特性
 
 * 采用二进制格式传输数据，而非文本格式
 * 对消息头进行压缩传输，能够节省消息头占用的网络的流量
@@ -23,20 +23,20 @@ image: null
 * 服务器推送，服务端能够主动把资源推送给客户端
 * ...
 
-## 启用HTTP/2的Nginx服务器要求
+## 启用 HTTP/2 的 Nginx 服务器要求
 
-* OpenSSL版本需要1.0.2及以上
-* Nginx版本需要1.9.0及以上
+* OpenSSL 版本需要 1.0.2 及以上
+* Nginx 版本需要 1.9.0 及以上
 
-## 检查服务器OpenSSL版本
+## 检查服务器 OpenSSL 版本
 
-通过下面的命令可以查看OpenSSL版本号
+通过下面的命令可以查看 OpenSSL 版本号
 
 ```bash
 $ openssl version -a
 ```
 
-如果版本低于1.0.2则执行下面的升级命令
+如果版本低于 1.0.2 则执行下面的升级命令
 
 ```bash
 $ wget http://openssl.org/source/openssl-1.0.2h.tar.gz
@@ -45,7 +45,7 @@ $ cd openssl-1.0.2h
 $ ./config && make && sudo make install
 ```
 
-上述命令使用默认配置源码安装OpenSSL，可以根据情况自定义，安装后再覆盖原有OpenSSL
+上述命令使用默认配置源码安装 OpenSSL，可以根据情况自定义，安装后再覆盖原有 OpenSSL
 
 ```bash
 $ sudo mv /usr/bin/openssl /usr/bin/openssl.bak
@@ -55,7 +55,7 @@ $ sudo ln -s /usr/local/ssl/include/openssl/ /usr/include/openssl
 $ sudo echo "/usr/local/ssl/lib" >>/etc/ld.so.conf
 ```
 
-## 准备SSL证书
+## 准备 SSL 证书
 
 下面提供些免费 SSL 申请渠道
 * [Let's Encrypt](https://letsencrypt.org/)
@@ -63,13 +63,13 @@ $ sudo echo "/usr/local/ssl/lib" >>/etc/ld.so.conf
 * [腾讯云 SSL 证书](https://www.qcloud.com/product/ssl.html)
 * ...
 
-## 安装或升级Nginx
+## 安装或升级 Nginx
 
-安装升级Nginx可使用[源码方式](#源码安装、升级Nginx)或者[apt-get方式](#apt-get方式安装、升级Nginx)
+安装升级 Nginx 可使用 [源码方式](#源码安装、升级Nginx) 或者 [apt-get 方式](#apt-get方式安装、升级Nginx)
 
-### 源码安装、升级Nginx
+### 源码安装、升级 Nginx
 
-* 下载Nginx
+* 下载 Nginx
 
 ```bash
 $ wget http://nginx.org/download/nginx-1.9.14.tar.gz
@@ -83,7 +83,7 @@ $ cd nginx-1.9.14
 $ ./configure --with-http_v2_module --with-http_ssl_module
 ```
 
-* 在`./configure`过程中如果报需要填写ssl目录，则可能需要安装 `libssl-dev`，使用apt-get安装即可
+* 在 `./configure` 过程中如果报需要填写 ssl 目录，则可能需要安装 `libssl-dev`，使用 apt-get 安装即可
 
 ```bash
 $ sudo apt-get install libssl-dev
@@ -96,9 +96,9 @@ $ make && sudo make install #安装
 $ make && sudo make upgrade #升级
 ```
 
-### apt-get方式安装、升级Nginx
+### apt-get 方式安装、升级 Nginx
 
-* 由于需要1.9及以上版本的Nginx，这里选择了PPA源
+* 由于需要 1.9 及以上版本的 Nginx，这里选择了 PPA 源
 
 ```bash
 $ sudo add-apt-repository --remove ppa:nginx/stable
@@ -107,7 +107,7 @@ $ sudo apt-get update
 $ sudo apt-get install nginx
 ```
 
-查看Nginx的版本信息
+查看 Nginx 的版本信息
 
 ```bash
 $ nginx -V
@@ -122,11 +122,11 @@ TLS SNI support enabled
 configure arguments: ...
 ```
 
-其中的OpenSSL的版本号大于1.0.2即可
+其中的 OpenSSL 的版本号大于 1.0.2 即可
 
-## 配置Nginx
+## 配置 Nginx
 
-在`/etc/nginx/conf.d/`任意新建一个配置文件，内容类似于下
+在 `/etc/nginx/conf.d/` 任意新建一个配置文件，内容类似于下
 
 ```nginx
 server {

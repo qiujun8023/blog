@@ -1,5 +1,5 @@
 ---
-title: 用Python进行简单的验证码识别
+title: 用 Python 进行简单的验证码识别
 date: '2015-01-23T00:00:00.000Z'
 description: 探讨验证码识别的基本思路与实现方法。文章通过 Python 的 PIL 库演示了图片加载、灰度处理、二值化及字符转换的完整过程，并提供了包括图片分割、特征提取及相似度比对在内的完整验证码识别代码示例，适用于简单的图形验证码识别场景。
 tags:
@@ -20,7 +20,7 @@ image: null
 
 ## 大致思路
 * 先打开原始图片
-![验证码1](images/code-1.jpg) ![验证码2](images/code-2.jpg) ![验证码3](images/code-3.jpg)
+![验证码 1](images/code-1.jpg) ![验证码 2](images/code-2.jpg) ![验证码 3](images/code-3.jpg)
 
 ```python
 import Image
@@ -34,9 +34,9 @@ im = im.convert('L')
 ```
 
 灰度处理后的效果
-![验证码灰度后1](images/code-L-1.jpg) ![验证码灰度后2](images/code-L-2.jpg) ![验证码灰度后3](images/code-L-3.jpg)
+![验证码灰度后 1](images/code-L-1.jpg) ![验证码灰度后 2](images/code-L-2.jpg) ![验证码灰度后 3](images/code-L-3.jpg)
 
-* 根据阀值(threshold)生成表table再根据table对图片二值化处理
+* 根据阀值(threshold)生成表 table 再根据 table 对图片二值化处理
 
 ```python
 threshold = 140
@@ -45,7 +45,7 @@ im = im.point(table, '1')
 ```
 
 二值化处理后的效果
-![验证码二值化后1](images/code-b-1.jpg) ![验证码二值化后2](images/code-b-2.jpg) ![验证码二值化后3](images/code-b-3.jpg)
+![验证码二值化后 1](images/code-b-1.jpg) ![验证码二值化后 2](images/code-b-2.jpg) ![验证码二值化后 3](images/code-b-3.jpg)
 
 * 将二值化后的图片转为字符串
 
@@ -104,7 +104,7 @@ for i in range(imgNum):
 ```
 
 分割后部分图片效果
-![验证码分割后后0](images/code-1-0.jpg) ![验证码分割后后1](images/code-1-1.jpg) ![验证码分割后后2](images/code-1-2.jpg) ![验证码分割后后3](images/code-1-3.jpg)
+![验证码分割后后 0](images/code-1-0.jpg) ![验证码分割后后 1](images/code-1-1.jpg) ![验证码分割后后 2](images/code-1-2.jpg) ![验证码分割后后 3](images/code-1-3.jpg)
 
 图片手动选择
 * 这一步我处理的很蛋痛
@@ -135,7 +135,7 @@ for key in folders:
 keys[key] = ''.join('0' if flag[0] > flag[1] else '1' for flag in imgFlag)
 ```
 
-* 正常情况下，每个字符对应的值就存放在keys里面了，可以输出看看
+* 正常情况下，每个字符对应的值就存放在 keys 里面了，可以输出看看
 
 ```python
 import json

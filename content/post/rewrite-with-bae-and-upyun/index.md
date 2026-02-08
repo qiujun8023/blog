@@ -55,10 +55,10 @@ handlers:
   - url : ^(.*)$
     static_files : /redirect.html
 ```
-这里将 `/CDN` 前缀作为标注，标注这是来自UPYUN的请求
+这里将 `/CDN` 前缀作为标注，标注这是来自 UPYUN 的请求
 也就是当请求路劲带有前缀 `/CDN` 则响应正常请求，否则发送重定向页面
 
-* 在 BAE 的 Git 仓库根目录下添加重定向页面 redirect.html ，内容与下面类似
+* 在 BAE 的 Git 仓库根目录下添加重定向页面 redirect.html，内容与下面类似
 
 ```html
 <script language="javascript"type="text/javascript">
@@ -73,7 +73,7 @@ handlers:
 
 ![接入情况](images/beian.png)
 
-这一步主要用于保留接入，防止被监测说域名未接入 BAE。由于都是直接接入 BAE ，所以 `www.qiujun.me` 和 `qiujun.duapp.com` 访问效果一致，都会是页面重定向
+这一步主要用于保留接入，防止被监测说域名未接入 BAE。由于都是直接接入 BAE，所以 `www.qiujun.me` 和 `qiujun.duapp.com` 访问效果一致，都会是页面重定向
 
 ### 对 UPYUN 的处理
 
@@ -81,12 +81,12 @@ handlers:
 * 进入相应服务配置页，先绑定域名，绑定 `qiujun.me`
 * 由于需要开启 HTTPS/H2，所以点击右上角 `工具箱` > `SSL 服务` > `添加 SSL 证书` 并添加
 * 接下来继续进入服务配置页，分别点击 `高级设置` > `自定义 Rewrite`
-* 由于 UPYUN 默认提供二级域名，所以这里先设置 Rewrite ，将二级域名的请求重定向到自己的域名
+* 由于 UPYUN 默认提供二级域名，所以这里先设置 Rewrite，将二级域名的请求重定向到自己的域名
 
 ```txt
 $WHEN($NOT($EQ($_HOST, qiujun.me)))$REDIRECT($_SCHEME://qiujun.me$_URI$PCALL(?$_QUERY), 301)
 ```
-这段代码的意思是，当访问的域名不是 `qiujun.me`时，就进行 `301` 重定向到 `qiujun.me` 域名
+这段代码的意思是，当访问的域名不是 `qiujun.me` 时，就进行 `301` 重定向到 `qiujun.me` 域名
 
 * 接下来配置联合 BAE 的 Rewrite，这条很简单
 
@@ -104,5 +104,5 @@ $WHEN($NOT($EQ($_HOST, qiujun.me)))$REDIRECT($_SCHEME://qiujun.me$_URI$PCALL(?$_
 
 ### CNAME 与 MX 记录共存问题
 
-* 通过上面的介绍也看到了， qiujun.me 是 CNAME 到 UPYUN 的，而我的邮箱 i@qiujun.me ，您可能会问是否冲突
-> 答：CNAME 与 MX 是不能共存的，这里是通过 CloudXNS 的 Link 记录实现的，我这边是将 blog.qiujun.me 域名 CNAME 到又拍云的 xxx.b0.aicdn.com. ，然后将 qiujun.me LINK 到 blog.qiujun.me ，这样就可以对 qiujun.me 使用 MX 记录了
+* 通过上面的介绍也看到了，qiujun.me 是 CNAME 到 UPYUN 的，而我的邮箱 i@qiujun.me，您可能会问是否冲突
+> 答：CNAME 与 MX 是不能共存的，这里是通过 CloudXNS 的 Link 记录实现的，我这边是将 blog.qiujun.me 域名 CNAME 到又拍云的 xxx.b0.aicdn.com.，然后将 qiujun.me LINK 到 blog.qiujun.me，这样就可以对 qiujun.me 使用 MX 记录了

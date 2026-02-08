@@ -1,7 +1,7 @@
 ---
-title: HTTP协议中PUT和POST使用区别
+title: HTTP 协议中 PUT 和 POST 使用区别
 date: '2016-04-10T00:00:00.000Z'
-description: 深入分析 HTTP 协议中 PUT 与 POST 方法的语义差异。文章介绍了 RESTful API 中的常见操作，并重点阐述了“幂等性”这一核心概念，帮助开发者在资源创建与更新场景下做出正确的请求方法选择。
+description: 深入分析 HTTP 协议中 PUT 与 POST 方法的语义差异。文章介绍了 RESTful API 中的常见操作，并重点阐述了「幂等性」这一核心概念，帮助开发者在资源创建与更新场景下做出正确的请求方法选择。
 tags:
   - HTTP
   - RESTful

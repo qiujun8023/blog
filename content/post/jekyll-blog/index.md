@@ -1,5 +1,5 @@
 ---
-title: 利用GitHub&Jekyll搭建一个免费博客
+title: 利用 GitHub&Jekyll 搭建一个免费博客
 date: '2015-01-09T00:00:00.000Z'
 description: 详细指导如何利用 GitHub Pages 托管服务与 Jekyll 静态网站生成器构建个人博客。内容包括搭建本地 Ruby 与 Jekyll 环境、创建 GitHub 项目、管理分支、配置站点结构及最终推送到 GitHub 的全过程。
 tags:
@@ -11,28 +11,28 @@ categories:
 image: null
 ---
 
-## 为什么用GitHub Pages
+## 为什么用 GitHub Pages
 
-* Git是一个开源的分布式版本控制系统，用以有效、高速的处理从很小到非常大的项目版本管理。
-* GitHub是一个提供免费托管Git库的站点
-* GitHub Pages的特点：免费托管、绑定域名、自带主题、支持自制页面和Jekyll。
-* Jekyll是一个静态站点生成器，它会根据网页源码生成静态文件。它提供了模板、变量、插件等功能，可以用来编写整个网站。
+* Git 是一个开源的分布式版本控制系统，用以有效、高速的处理从很小到非常大的项目版本管理。
+* GitHub 是一个提供免费托管 Git 库的站点
+* GitHub Pages 的特点：免费托管、绑定域名、自带主题、支持自制页面和 Jekyll。
+* Jekyll 是一个静态站点生成器，它会根据网页源码生成静态文件。它提供了模板、变量、插件等功能，可以用来编写整个网站。
 
-## 用GitHub Pages的好处
+## 用 GitHub Pages 的好处
 
-* 托管于GitHub,不用担心文章的丢失,即使文章误删也可以快速恢复
+* 托管于 GitHub,不用担心文章的丢失,即使文章误删也可以快速恢复
 * 免费&无限流量
 * 可以绑定自己的域名(只能绑定一个)
 
-## 搭建本地Jekyll环境
+## 搭建本地 Jekyll 环境
 
-* 安装Ruby（因为Jekyll是Ruby写的）
+* 安装 Ruby（因为 Jekyll 是 Ruby 写的）
 
 ```bash
 $ sudo apt-get install ruby ruby-dev
 ```
 
-* 修改ruby软件源
+* 修改 ruby 软件源
 
 ```bash
 $ gem sources --remove http://rubygems.org/
@@ -40,32 +40,32 @@ $ gem sources -a https://ruby.taobao.org/
 $ gem sources -u
 ```
 
-* 安装`Jekyll`
+* 安装 `Jekyll`
 
 ```bash
 $ sudo gem install jekyll
 ```
 可能需要等一会
 
-* 安装`NodeJs` 不然运行的话会报 `Could not find a JavaScript runtime.`
+* 安装 `NodeJs` 不然运行的话会报 `Could not find a JavaScript runtime.`
 
 ```bash
 $ sudo apt-get install nodejs
 ```
 
-到此本地Jekyll环境就搭建好了
+到此本地 Jekyll 环境就搭建好了
 
-## GitHub创建一个项目
+## GitHub 创建一个项目
 
-先确保本地已经搭建Git环境且有Git账号，然后GitHub 创建一个项目 假定为Blog
+先确保本地已经搭建 Git 环境且有 Git 账号，然后 GitHub 创建一个项目 假定为 Blog
 
-* 克隆项目到本地(将下面的username换成你的名字)
+* 克隆项目到本地(将下面的 username 换成你的名字)
 
 ```bash
 $ git clone https://github.com/username/Blog.git
 ```
 
-* 切换到Blog目录
+* 切换到 Blog 目录
 
 ```bash
 $ cd Blog
@@ -78,17 +78,17 @@ $ git branch -m master gh-pages
 $ git push origin gh-pages
 ```
 
-在GitHub的Blog项目找到主分支切换，选择gh-pages分支
+在 GitHub 的 Blog 项目找到主分支切换，选择 gh-pages 分支
 
 ![分支切换](images/gh-pages.png)
 
-* 删除GitHub的master分支
+* 删除 GitHub 的 master 分支
 
 ```bash
 $ git push --delete origin master
 ```
 
-## Jekyll搭建示例
+## Jekyll 搭建示例
 
 * 绑定域名（没有域名可以忽略）
 
@@ -96,9 +96,9 @@ $ git push --delete origin master
 $ vim CNAME
 ```
 
-在里面填入你的域名，并将域名的CNAME记录指向到`ursename.github.io`
+在里面填入你的域名，并将域名的 CNAME 记录指向到 `ursename.github.io`
 
-* 创建Jekyll的配置
+* 创建 Jekyll 的配置
 
 ```bash
 $ vim _config.yml
@@ -207,13 +207,13 @@ title: 我的Blog
 $ jekyll server
 ```
 
-正常会在4000端口运行，用浏览器打开`127.0.0.1:4000`,如果看到以下的内容，那么就搭建成功了
+正常会在 4000 端口运行，用浏览器打开 `127.0.0.1:4000`,如果看到以下的内容，那么就搭建成功了
 
 ![浏览器打开效果](images/my_blog.png)
 
-## Push到GitHub
+## Push 到 GitHub
 
-* 提交并推送到GitHub
+* 提交并推送到 GitHub
 
 ```bash
 $ git add .
@@ -221,8 +221,8 @@ $ git commit -m "hello world"
 $ git push origin gh-pages
 ```
 
-* 这时打开上面你CNAME指向的域名或者GitHub的域名（usename.github.io/Blog）
+* 这时打开上面你 CNAME 指向的域名或者 GitHub 的域名（usename.github.io/Blog）
 
 一个简单的博客就搭建完成了
 
-注：push到GitHub后不会立即生效，大概要等30s左右
+注：push 到 GitHub 后不会立即生效，大概要等 30s 左右

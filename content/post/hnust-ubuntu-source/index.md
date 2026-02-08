@@ -13,7 +13,7 @@ image: null
 
 ## 缘由
 
-最近不知为什么教育网访问国内的Ubuntu源非常的慢，迫于无奈，只有自己搭建一个一个Ubuntu内网源了。
+最近不知为什么教育网访问国内的 Ubuntu 源非常的慢，迫于无奈，只有自己搭建一个 Ubuntu 内网源了。
 
 注意：目前只是把把电子科技大学的 `Ubuntu 14.04` 源同步了下来
 
@@ -21,7 +21,7 @@ image: null
 
 ## 以下简单介绍如何修改源 
 
-* 首先备份Ubuntu自带源列表
+* 首先备份 Ubuntu 自带源列表
 
 ```bash
 $ sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
