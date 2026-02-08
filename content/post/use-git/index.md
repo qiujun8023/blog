@@ -1,22 +1,23 @@
 ---
 title: 在Ubuntu下搭建Git环境并简单使用
 date: '2015-01-12T00:00:00.000Z'
-description: null
+description: 指导如何在 Ubuntu 操作系统中搭建 Git 环境并实现与 GitHub 的基础交互。内容涵盖 Git 的安装、全局用户配置、SSH 密钥生成与 GitHub 绑定，以及标准的代码提交流程（克隆、修改、暂存、提交、推送）和常用分支管理命令。
 tags:
   - Git
   - GitHub
   - Ubuntu
-categories: []
+categories:
+  - 运维
 image: null
 ---
 
-#### **安装Git**
+## 安装Git
 
 ```bash
 $ sudo apt-get install git
 ```
 
-#### **Git初始化配置**
+## Git初始化配置
 
 1.配置使用Git仓库的人员姓名
 
@@ -30,9 +31,7 @@ $ git config --global user.name "Your Name"
 $ git config --global user.email "your@mail.com"
 ```
 
-<!-- more -->
-
-#### **安装SSH并创建公钥**
+## 安装SSH并创建公钥
 
 ```bash
 $ sudo apt-get install openssh-server
@@ -47,7 +46,7 @@ $ cat ~/.ssh/id_rsa.pub
 
 复制公钥内容，打开自己的GitHub，设置 > SSH Keys 里面新建一个SSH Key，将复制的内容粘贴保存就可以了
 
-#### **从GitHub上克隆项目**
+## 从GitHub上克隆项目
 
 ```bash
 $ git clone git@github.com:yourname/project.git
@@ -55,7 +54,7 @@ $ git clone git@github.com:yourname/project.git
 
 然后就可以对项目目录下的文件进行编辑了
 
-#### **示例修改**：
+## 示例修改：
 
 进入代码目录 project
 
@@ -89,7 +88,7 @@ $ git push origin master
 
 一次简单的Git克隆到提交就完成了。
 
-#### 远程仓库相关命令
+## 远程仓库相关命令
 
 > 　　检出仓库：$ git clone git://github.com/jquery/jquery.git
 >
@@ -105,7 +104,7 @@ $ git push origin master
 >
 > 推送远程仓库：$ git push [remoteName] [localBranchName]
 
-#### 分支操作相关命令
+## 分支操作相关命令
 
 > 查看本地分支：$ git branch
 >

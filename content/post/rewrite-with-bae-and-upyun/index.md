@@ -1,55 +1,54 @@
 ---
 title: 使用 BAE 与又拍云联合 Rewrite
 date: '2016-11-10T00:00:00.000Z'
-description: null
+description: 探讨如何通过联合使用 BAE 与又拍云（UpYun）来实现全站 HTTPS 与高性能回源。文章详细阐述了通过自定义重定向页面、CNAME 解析以及又拍云端的自定义重写规则（Rewrite）来保证流量入口唯一性、强制跳转 HTTPS 以及支持 HTTP/2 协议的完整配置流程。
 tags:
-  - BAE
-  - UpYun
   - HTTPS
-categories: []
+  - CDN
+  - 重定向
+categories:
+  - 运维
 image: null
 ---
 
-#### **背景**
+## 背景
 
 * 如果域名未备案，在国内基本无法使用
-* 同时国内 VPS 的高价低配，于是找到了相对最便宜的 `应用云擎(BAE)基础版` 作为备案的基础
+* 同时国内 VPS 的高价低配，于是找到了相对最便宜的 `应用云擎(BAE)基础版` 作为基础
 * 但是 BAE 不支持 HTTPS，并且不能控制单一域名对外
 
-#### **需求**
+## 需求
 
-* 方案要保证备案不被注销
+* 方案要保证稳定性
 * 能够相对低廉、稳定地使用 HTTPS、H2
 * HTTP 请求要重定向到 HTTPS 请求
 * 不能存在除 `qiujun.me` 以外的域名访问博客
 
-#### **实现**
+## 实现
 
 * 又拍云支持 HTTPS 与 H2，并且可以开启强制 HTTPS，这里解决了 HTTPS 的问题
 * 同时又拍云支持自定义 Rewrite，可以用 Rewrite 标注这是来自 UPYUN 的请求
 * BAE 接收到请求后，判断请求来自又拍云就接受，否者返回重定向，以此保证入口的唯一性
-* 同时将 `www.qiujun.me` 域名解析到百度云，用来通过百度云的备案检查，保证备案不被注销
+* 同时将 `www.qiujun.me` 域名解析到百度云，用来通过检查
 
-<!-- more -->
-
-#### **流程**
+## 流程
 
 ![流程图](images/flow.png)
 
-#### **步骤**
+## 步骤
 
 > **下面以 qiujun.me 相关域名作为样例**
 > **同时以 qiujun.duapp.com 用来表示 BAE 分配的二级域名**
 
-##### **对 BAE 的处理**
+### 对 BAE 的处理
 
-* 注册 `BAE` 并创建应用，由于只是用来放静态博客及保留备案，这里选择最便宜的，大概 3 元一个月
+* 注册 `BAE` 并创建应用，由于只是用来放静态博客，这里选择最便宜的，大概 3 元一个月
 
 ![创建应用](images/bae.png)
 
 * 在 BAE 的 Git 仓库根目录下 app.conf 的内容如下：
 
-```
+```yaml
 handlers:
   - url : ^\/cdn\/(.*)$
     static_files : /$1
@@ -70,13 +69,13 @@ handlers:
 </script>
 ```
 
-* 然后将 `www.qiujun.me` CNAME 解析到 `qiujun.duapp.com`，过一段时间可以看到类似的图片（假定在百度云备案已经完成）
+* 然后将 `www.qiujun.me` CNAME 解析到 `qiujun.duapp.com`，过一段时间可以看到类似的图片（假定在百度云已经完成操作）
 
-![备案](images/beian.png)
+![接入情况](images/beian.png)
 
-这一步主要用于保留备案，防止被监测说域名未接入 BAE。由于都是直接接入 BAE ，所以 `www.qiujun.me` 和 `qiujun.duapp.com` 访问效果一致，都会是页面重定向
+这一步主要用于保留接入，防止被监测说域名未接入 BAE。由于都是直接接入 BAE ，所以 `www.qiujun.me` 和 `qiujun.duapp.com` 访问效果一致，都会是页面重定向
 
-##### **对 UPYUN 的处理**
+### 对 UPYUN 的处理
 
 * 注册 `又拍云` 并创建服务，选择回源方式，回源地址填写 `www.qiujun.me` 或 `qiujun.duapp.com`
 * 进入相应服务配置页，先绑定域名，绑定 `qiujun.me`
@@ -87,7 +86,7 @@ handlers:
 ```txt
 $WHEN($NOT($EQ($_HOST, qiujun.me)))$REDIRECT($_SCHEME://qiujun.me$_URI$PCALL(?$_QUERY), 301)
 ```
-这段代码的意思是，当访问的域名不是 `qiujun.me` 时，就进行 `301` 重定向到 `qiujun.me` 域名
+这段代码的意思是，当访问的域名不是 `qiujun.me`时，就进行 `301` 重定向到 `qiujun.me` 域名
 
 * 接下来配置联合 BAE 的 Rewrite，这条很简单
 
@@ -101,9 +100,9 @@ $WHEN($NOT($EQ($_HOST, qiujun.me)))$REDIRECT($_SCHEME://qiujun.me$_URI$PCALL(?$_
 
 到这里所有的步骤就都完成了
 
-#### **其他问题**
+## 其他问题
 
-##### CNAME 与 MX 记录共存问题
+### CNAME 与 MX 记录共存问题
 
 * 通过上面的介绍也看到了， qiujun.me 是 CNAME 到 UPYUN 的，而我的邮箱 i@qiujun.me ，您可能会问是否冲突
 > 答：CNAME 与 MX 是不能共存的，这里是通过 CloudXNS 的 Link 记录实现的，我这边是将 blog.qiujun.me 域名 CNAME 到又拍云的 xxx.b0.aicdn.com. ，然后将 qiujun.me LINK 到 blog.qiujun.me ，这样就可以对 qiujun.me 使用 MX 记录了

@@ -1,30 +1,30 @@
 ---
 title: 利用GitHub&Jekyll搭建一个免费博客
 date: '2015-01-09T00:00:00.000Z'
-description: null
+description: 详细指导如何利用 GitHub Pages 托管服务与 Jekyll 静态网站生成器构建个人博客。内容包括搭建本地 Ruby 与 Jekyll 环境、创建 GitHub 项目、管理分支、配置站点结构及最终推送到 GitHub 的全过程。
 tags:
   - Jekyll
-  - GitHub
-categories: []
+  - GitHub Pages
+  - 静态网站
+categories:
+  - 运维
 image: null
 ---
 
-#### **为什么用GitHub Pages**
+## 为什么用GitHub Pages
 
 * Git是一个开源的分布式版本控制系统，用以有效、高速的处理从很小到非常大的项目版本管理。
 * GitHub是一个提供免费托管Git库的站点
 * GitHub Pages的特点：免费托管、绑定域名、自带主题、支持自制页面和Jekyll。
 * Jekyll是一个静态站点生成器，它会根据网页源码生成静态文件。它提供了模板、变量、插件等功能，可以用来编写整个网站。
 
-#### **用GitHub Pages的好处**
+## 用GitHub Pages的好处
 
 * 托管于GitHub,不用担心文章的丢失,即使文章误删也可以快速恢复
 * 免费&无限流量
 * 可以绑定自己的域名(只能绑定一个)
 
-<!-- more -->
-
-#### **搭建本地Jekyll环境**
+## 搭建本地Jekyll环境
 
 * 安装Ruby（因为Jekyll是Ruby写的）
 
@@ -55,7 +55,7 @@ $ sudo apt-get install nodejs
 
 到此本地Jekyll环境就搭建好了
 
-#### **GitHub创建一个项目**
+## GitHub创建一个项目
 
 先确保本地已经搭建Git环境且有Git账号，然后GitHub 创建一个项目 假定为Blog
 
@@ -88,7 +88,7 @@ $ git push origin gh-pages
 $ git push --delete origin master
 ```
 
-#### **Jekyll搭建示例**
+## Jekyll搭建示例
 
 * 绑定域名（没有域名可以忽略）
 
@@ -211,7 +211,7 @@ $ jekyll server
 
 ![浏览器打开效果](images/my_blog.png)
 
-#### **Push到GitHub**
+## Push到GitHub
 
 * 提交并推送到GitHub
 

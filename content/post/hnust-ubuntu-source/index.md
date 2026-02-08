@@ -1,15 +1,17 @@
 ---
 title: 湖南科技大学 Ubuntu 内网源
 date: '2015-01-22T00:00:00.000Z'
-description: null
+description: 针对教育网访问外部软件源缓慢的问题，作者在内网环境下搭建了专用的 Ubuntu 镜像源。本文提供了该源的访问地址，并详细列出了备份原源列表、修改 sources.list 以及更新软件列表的简单操作步骤。
 tags:
-  - HNUST
   - Ubuntu
-categories: []
+  - 镜像源
+  - HNUST
+categories:
+  - 运维
 image: null
 ---
 
-#### **缘由**
+## 缘由
 
 最近不知为什么教育网访问国内的Ubuntu源非常的慢，迫于无奈，只有自己搭建一个一个Ubuntu内网源了。
 
@@ -17,9 +19,7 @@ image: null
 
 源的地址为：`http://mirror.qiujun.me/ubuntu/`
 
-<!-- more -->
-
-#### **以下简单介绍如何修改源 **
+## 以下简单介绍如何修改源 
 
 * 首先备份Ubuntu自带源列表
 

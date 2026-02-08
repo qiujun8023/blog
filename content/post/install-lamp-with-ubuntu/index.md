@@ -1,27 +1,24 @@
 ---
 title: Ubuntu下安装Apache+PHP+MySQL
 date: '2015-05-04T00:00:00.000Z'
-description: null
+description: 详细讲解在 Debian 与 Ubuntu 操作系统中搭建 LAMP（Apache, PHP, MySQL）环境的操作流程。文章涵盖了各组件的安装、服务端重启、PHP 环境验证方法，并针对 Apache 域名警告、网站根目录修改及 PHPMyAdmin 扩展缺失等常见问题提供了解决方案。
 tags:
   - Ubuntu
-  - Apache
-  - PHP
-  - MySQL
-categories: []
+  - LAMP
+categories:
+  - 运维
 image: null
 ---
 
-以下是在 Debian 及 Ubuntu 安裝 Apache、PHP、MySQL的步驟及相关问题的解决办法
+以下是在 Debian 及 Ubuntu 安装 Apache、PHP、MySQL的步骤及相关问题的解决办法
 
-#### **安装**
+## 安装
 
 * 安装前更新源
 
 ```bash
 $ sudo apt-get update
 ```
-
-<!-- more -->
 
 * 安装Apache2并重启
 
@@ -85,7 +82,7 @@ $ sudo apt-get install phpmyadmin
 $ sudo ln -s /usr/share/phpmyadmin /var/www/
 ```
 
-#### **常见问题解决**
+## 常见问题解决
 
 * 重启Apache2时报如下提示：
 > AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.17.0.31. Set the 'ServerName' directive globally to suppress this message

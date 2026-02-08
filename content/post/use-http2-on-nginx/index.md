@@ -1,21 +1,21 @@
 ---
 title: 在Nginx上配置HTTP/2+TLS
 date: '2016-04-17T00:00:00.000Z'
-description: null
+description: 详细讲解如何在 Nginx 服务器上启用 HTTP/2 协议。文章首先阐述了 HTTP/2 协议的二进制分帧、多路复用等特性，接着介绍了对 OpenSSL 和 Nginx 版本的环境要求，并分别演示了源码安装与 PPA 方式升级 Nginx 及配置 TLS 证书的完整步骤。
 tags:
-  - Ubuntu
   - Nginx
-  - HTTP
+  - HTTP/2
   - HTTPS
-categories: []
+categories:
+  - 运维
 image: null
 ---
 
-#### **什么是HTTP/2协议**
+## 什么是HTTP/2协议
 
 > HTTP 2.0即超文本传输协议 2.0，是下一代HTTP协议。是由互联网工程任务组（IETF）的Hypertext Transfer Protocol Bis (httpbis)工作小组进行开发。是自1999年http1.1发布后的首个更新。HTTP 2.0在2013年8月进行首次合作共事性测试。在开放互联网上HTTP 2.0将只用于https:// 网址，而 http:// 网址将继续使用HTTP/1，目的是在开放互联网上增加使用加密技术，以提供强有力的保护去遏制主动攻击。
 
-#### **HTTP/2协议的主要特性**
+## HTTP/2协议的主要特性
 
 * 采用二进制格式传输数据，而非文本格式
 * 对消息头进行压缩传输，能够节省消息头占用的网络的流量
@@ -23,14 +23,12 @@ image: null
 * 服务器推送，服务端能够主动把资源推送给客户端
 * ...
 
-<!--more-->
-
-#### **启用HTTP/2的Nginx服务器要求**
+## 启用HTTP/2的Nginx服务器要求
 
 * OpenSSL版本需要1.0.2及以上
 * Nginx版本需要1.9.0及以上
 
-#### **检查服务器OpenSSL版本**
+## 检查服务器OpenSSL版本
 
 通过下面的命令可以查看OpenSSL版本号
 
@@ -57,7 +55,7 @@ $ sudo ln -s /usr/local/ssl/include/openssl/ /usr/include/openssl
 $ sudo echo "/usr/local/ssl/lib" >>/etc/ld.so.conf
 ```
 
-#### **准备SSL证书**
+## 准备SSL证书
 
 下面提供些免费 SSL 申请渠道
 * [Let's Encrypt](https://letsencrypt.org/)
@@ -65,11 +63,11 @@ $ sudo echo "/usr/local/ssl/lib" >>/etc/ld.so.conf
 * [腾讯云 SSL 证书](https://www.qcloud.com/product/ssl.html)
 * ...
 
-#### **安装或升级Nginx**
+## 安装或升级Nginx
 
 安装升级Nginx可使用[源码方式](#源码安装、升级Nginx)或者[apt-get方式](#apt-get方式安装、升级Nginx)
 
-##### **源码安装、升级Nginx**
+### 源码安装、升级Nginx
 
 * 下载Nginx
 
@@ -98,7 +96,7 @@ $ make && sudo make install #安装
 $ make && sudo make upgrade #升级
 ```
 
-##### **apt-get方式安装、升级Nginx**
+### apt-get方式安装、升级Nginx
 
 * 由于需要1.9及以上版本的Nginx，这里选择了PPA源
 
@@ -126,7 +124,7 @@ configure arguments: ...
 
 其中的OpenSSL的版本号大于1.0.2即可
 
-#### **配置Nginx**
+## 配置Nginx
 
 在`/etc/nginx/conf.d/`任意新建一个配置文件，内容类似于下
 
