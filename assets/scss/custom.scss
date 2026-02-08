@@ -1,0 +1,131 @@
+.article-subtitle {
+    font-size: 16px;
+}
+
+/* --- 页脚三栏响应式布局 --- */
+.site-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 30px 0;
+    /* 缩小上下边距 */
+    color: var(--card-text-color-secondary);
+    position: relative;
+
+    &::before {
+        display: none !important;
+    }
+
+    .footer-section {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* 左侧：备案信息 */
+    .footer-left {
+        text-align: left;
+        align-items: flex-start;
+
+        &::before {
+            content: "";
+            display: block;
+            width: 40px;
+            height: 3px;
+            background-color: #747474;
+            margin-bottom: 12px;
+            /* 缩小间距 */
+        }
+    }
+
+    /* 中间：版权年份 */
+    .footer-center {
+        text-align: center;
+        align-items: center;
+        padding-top: 15px;
+        /* 缩小补偿高度，使视觉更紧凑 */
+
+        .copyright-year {
+            white-space: nowrap;
+            /* 继承主题原始字型样式 */
+        }
+    }
+
+    /* 右侧：驱动信息 */
+    .footer-right {
+        text-align: right;
+        align-items: flex-end;
+
+        &::before {
+            content: "";
+            display: block;
+            width: 40px;
+            height: 3px;
+            background-color: #747474;
+            margin-bottom: 12px;
+            /* 缩小间距 */
+            margin-left: auto;
+        }
+    }
+
+    /* 文本细节优化 */
+    p,
+    a,
+    span {
+        font-size: 12px !important;
+        line-height: 1.4 !important;
+        /* 缩小行高使间距更紧致 */
+        color: var(--card-text-color-secondary) !important;
+        opacity: 1 !important;
+        text-decoration: none;
+        margin: 0 !important;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+}
+
+/* --- 移动端彻底精简适配 --- */
+@media (max-width: 768px) {
+    .site-footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 40px 20px;
+
+        .footer-section {
+            width: 100%;
+            align-items: center;
+            flex: none;
+            margin-bottom: 20px;
+            /* 统一区块间距 */
+
+            /* 移动端隐藏所有装饰横线，保持极简 */
+            &::before,
+            &::after {
+                display: none !important;
+            }
+        }
+
+        /* 移动端排序：版权 > 备案 > 驱动 */
+        .footer-center {
+            order: -1;
+            padding-top: 0;
+            margin-bottom: 15px;
+
+            .copyright-year {
+                font-size: 14px !important;
+                /* 移动端版权稍微大一点点以示区分 */
+            }
+        }
+
+        .footer-left {
+            margin-bottom: 10px;
+        }
+
+        .footer-right {
+            margin-bottom: 0;
+        }
+    }
+}

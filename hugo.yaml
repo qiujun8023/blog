@@ -1,0 +1,80 @@
+baseURL: /
+languageCode: zh-cn
+defaultContentLanguage: zh-cn
+title: 技术研究札记
+theme: github.com/CaiJimmy/hugo-theme-stack/v3
+
+params:
+    mainSections:
+        - post
+    featuredImageField: image
+    dateFormat:
+        published: "2006-01-02"
+
+    sidebar:
+        # emoji: ☕️
+        subtitle: Jun's Blog
+        avatar:
+            enabled: true
+            local: true
+            src: images/avatar_landscape.png
+
+    # 官方默认挂件布局
+    widgets:
+        homepage:
+            - type: search
+            - type: archives
+            - type: categories
+            - type: tag-cloud
+        page:
+            - type: toc
+
+    footer:
+        since: 2015
+        icp: "湘ICP备2026004167号-1"
+        # beian: "湘公网安备 xxxx号"
+
+    article:
+        math: false
+        toc: true
+        readingTime: true
+
+    style:
+        accentColor:
+            default: "#2ba3e2"
+        fontFamily:
+            google: "Inter"
+
+menu:
+    main:
+        - identifier: home
+          name: 首页
+          url: /
+          params:
+              icon: home
+          weight: 1
+
+        - identifier: archives
+          name: 归档
+          url: /archives/
+          params:
+              icon: archives
+          weight: 2
+
+        - identifier: search
+          name: 搜索
+          url: /search/
+          params:
+              icon: search
+          weight: 3
+
+        - identifier: about
+          name: 关于
+          url: /about/
+          params:
+              icon: user
+          weight: 4
+
+module:
+    imports:
+        - path: github.com/CaiJimmy/hugo-theme-stack/v3

@@ -1,7 +1,19 @@
+# Hugo 标准忽略规则
+public/
+resources/
+.hugo_build.lock
+hugo
+
+# 操作系统与 IDE 冗余文件
 .DS_Store
 Thumbs.db
-db.json
-*.log
+.vscode/
+.idea/
+
+# Node.js 遗留（如果你以后使用 npm 插件）
 node_modules/
-public/
-.deploy*/
+npm-debug.log*
+
+# Hugo 模块缓存
+.hugo_cache/
+_vendor/
