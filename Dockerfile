@@ -1,5 +1,5 @@
-# 第一阶段：构建静态页面
-FROM floryn90/hugo:ext-alpine AS builder
+# 第一阶段：在构建机原生架构上构建一次静态页面，供各架构镜像共用
+FROM --platform=$BUILDPLATFORM floryn90/hugo:ext-alpine AS builder
 
 WORKDIR /src
 COPY . .
