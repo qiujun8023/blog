@@ -8,7 +8,7 @@ COPY . .
 RUN hugo --minify
 
 # 第二阶段：Nginx 提供服务
-FROM nginx:alpine
+FROM nginx:alpine-slim
 
 # 复制构建产物到 Nginx 目录
 COPY --from=builder /src/public /usr/share/nginx/html
