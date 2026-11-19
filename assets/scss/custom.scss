@@ -2,6 +2,13 @@
     font-size: 16px;
 }
 
+/* 桌面端左侧栏按内容收缩：主题 v4 给它加了 width: 100%，会撑满 max-width 挤窄正文 */
+.container .left-sidebar {
+    @include respond(md) {
+        width: auto;
+    }
+}
+
 /* --- 页脚三栏响应式布局 --- */
 .site-footer {
     display: flex;

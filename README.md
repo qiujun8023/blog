@@ -1,66 +1,39 @@
 # Jun's Blog
 
-这是一个基于 [Hugo](https://gohugo.io/) 构建的现代化个人博客，使用了极简且功能强大的 [Hugo Theme Stack](https://github.com/CaiJimmy/hugo-theme-stack) 主题。
+个人技术博客 [www.qiujun.me](https://www.qiujun.me)，用 [Hugo](https://gohugo.io/) 生成静态页面，主题是 [Stack](https://github.com/CaiJimmy/hugo-theme-stack) v4，通过 Hugo Modules 引入。
 
-## 🚀 快速开始
+## 本地开发
 
-### 1. 环境准备
-本项目使用 Hugo Modules 管理主题，建议安装 **Hugo Extended** 版本（v0.140.0 或更高）。
-
-```bash
-# macOS (使用 Homebrew)
-brew install hugo
-
-# 验证版本
-hugo version
-```
-
-### 2. 本地开发
-在项目根目录下运行以下命令启动预览服务器：
+需要 Hugo 和 Dart Sass：主题样式是 SCSS，Hugo 自 v0.170 起只用 Dart Sass 编译；拉取主题模块需要 Go。
 
 ```bash
-hugo server -D
+brew install hugo sass/sass/sass go
+hugo server -D        # 预览 http://localhost:1313
 ```
-启动后访问 `http://localhost:1313` 即可实时预览。
 
-## 📝 日常使用
-
-### 创建新文章
-```bash
-hugo new post/文章名称/index.md
-```
-文章将创建在 `content/post/文章名称/index.md`。建议采用 **Page Bundle** 结构（即每个文章一个文件夹），方便管理该文章相关的图片。
-
-### 图片管理
-*   **文章内图片**：建议放在文章所在的文件夹下，直接在 Markdown 中引用。
-*   **公共资源**：存放在 `static/uploads/` 目录下。
-
-## 🏗️ 构建与部署
-
-运行以下命令生成最终的静态网页文件：
+新文章用 Page Bundle，一篇一个目录，配图放在同目录下直接引用：
 
 ```bash
-hugo --minify
+hugo new post/<slug>/index.md
 ```
-生成的产物位于 `public/` 目录，你可以将其部署到 GitHub Pages、Vercel 或 Netlify。
 
-## 📂 目录结构说明
+## 依赖升级
 
-- `archetypes/`: 文章初始模板。
-- `assets/`: 需要经过 Hugo 处理的资源（SCSS, JS）。
-- `content/`: 博客内容（Markdown 文件）。
-- `data/`: 全局自定义数据。
-- `hugo.yaml`: 核心配置文件（标题、菜单、侧边栏挂件等）。
-- `layouts/`: 用于覆盖主题默认布局的自定义模板。
-- `static/`: 原样输出的静态文件（如 Favicon、头像）。
+- 主题：`hugo mod get -u github.com/CaiJimmy/hugo-theme-stack/v4 && hugo mod tidy`。跨大版本时模块路径会变（`/v4` → `/v5`），要同时改 `hugo.yaml` 的 `module.imports`，并对照主题的升级说明检查 `layouts/` 下的覆盖模板。
+- Hugo 和 nginx 用浮动 tag，重新构建即升级，不需要改文件。
 
-## 🛠️ 技术细节
+## 构建与部署
 
-- **主题模式**: Hugo Modules (无需下载主题源码到项目内)。
-- **样式**: 基于主题内置的响应式设计。
-- **国际化**: 已配置为 `zh-cn`。
+推送到 `master` 后 GitHub Actions 构建多架构镜像，推到私有仓库的 `personal/blog:latest` 和 `personal/blog:<短 SHA>`。构建阶段用官方 `ghcr.io/gohugoio/hugo` 镜像，运行阶段用 `nginx:alpine-slim`。CI 只负责推镜像，服务器上要自己拉取并重建容器。
 
-## 📄 许可协议
+## 目录
+
+- `hugo.yaml`：站点配置，包括菜单、侧栏挂件和页脚备案信息。
+- `content/`：文章在 `post/`，另有 `about/`、`archives/`、`search/` 三个独立页面。`search/` 必须保持 `type: page`，否则主题的搜索模板和 JSON 索引不会生效。
+- `layouts/_partials/footer/footer.html`：覆盖主题页脚，改成备案、版权、驱动信息三栏，样式在 `assets/scss/custom.scss`。
+- `assets/`：头像图片和自定义样式。
+
+## 许可协议
 
 - **代码**（配置、模板、样式、脚本等）：[MIT](LICENSE)
 - **内容**（`content/` 下的文章及其配图）：[CC BY-NC-SA 4.0](LICENSE-CONTENT)，转载请署名、注明出处，不得用于商业用途，改编后须以相同协议发布

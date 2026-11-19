@@ -1,0 +1,8 @@
+.git
+.github
+public
+resources
+_vendor
+hugo
+.hugo_build.lock
+node_modules

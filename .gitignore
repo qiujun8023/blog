@@ -2,7 +2,8 @@
 public/
 resources/
 .hugo_build.lock
-hugo
+# Hugo 按本机模块缓存路径生成，给编辑器用
+assets/jsconfig.json
 
 # 操作系统与 IDE 冗余文件
 .DS_Store
